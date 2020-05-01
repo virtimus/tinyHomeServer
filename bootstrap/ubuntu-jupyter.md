@@ -1,6 +1,6 @@
 #### made on base of /i3c/dockerfiles/inb
 
-
+```
 ## Updage Your system:
 #
 sudo apt-get update && sudo apt-get install -y wget bash git nodejs npm python3 python3-pip python3-dev build-essential zip unzip pandoc texlive texlive-xetex python-setuptools \
@@ -30,3 +30,4 @@ mkdir -p /src && cd /src && git clone https://github.com/virtimus/calysto_bash &
 mkdir -p /src && cd /src && git clone https://github.com/virtimus/tinyHomeServer
 
 cd /src && jupyter nbextension enable scroll_down/main && echo "n\n" | jupyter notebook --generate-config && python3 -m notebook --port 8888 --ip=0.0.0.0 --allow-root
+```
