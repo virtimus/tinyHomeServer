@@ -39,10 +39,10 @@ run scrcpy - You should see Your new device screeen
 install UserLandTuned 
 
 - compiled from source:
-
+```
 mkdir -p /src && cd /src && git clone https://github.com/virtimus/UserLAnd && cd UserLAnd && gradlew build
 adb install /src/UserLAnd/app/build/outputs/apk/debug/app-debug.apk 
-
+```
 - or downloaded:
 
 
@@ -60,7 +60,7 @@ Restart Your device
 Now You should have UserLAnd session avaliable on Your device port 2022
 
 
-Next steps: ubuntu-jupyter
+Next steps: [ubuntu-jupyter.md](ubuntu-jupyter.md)
 
 ## Dir mapping between Android and UL
 
