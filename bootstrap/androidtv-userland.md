@@ -3,7 +3,7 @@
 
 ## Connecting device to local network
 
-First You have to connect Your device to Your local network. Use cable (preffered) or wifi settings
+First You have to connect Your device to Your local network. Use cable (preferred) or wifi settings
 ## Determine device IP
 
 You can:
