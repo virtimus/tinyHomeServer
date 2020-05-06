@@ -67,7 +67,7 @@ Restart Your device
 Now You should have UserLAnd session avaliable on Your device port 2022
 
 
-Next steps: [ubuntu-jupyter.md](ubuntu-jupyter.md)
+Next steps: [ubuntu.md](ubuntu.md)
 
 
 
