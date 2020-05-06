@@ -38,7 +38,7 @@ Link some directories for convenient access - UL side (android side in network.m
 ln -sf /storage/internal /ths/int 
 ```
 
-
+Next steps: [network.md](network.md)
 
 
 
