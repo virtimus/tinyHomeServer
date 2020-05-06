@@ -99,10 +99,10 @@ adb -s localhost shell su -c 'mount -o remount,ro /'
 
 Configure and run ap(accessPoint) - use macroDroid for autostart on boot
 
-#!TODO! change to soft - normally run by autostart
+You can also use procifed script tap-start (currently implementation hardly depends on android settings ui)
 #```
-#chmod og+x /ths/tinyHomeServer/bin/initap
-#/ths/tinyHomeServer/bin/initap
+#chmod og+x /ths/tinyHomeServer/bin/tap-start
+#/ths/tinyHomeServer/bin/tap-start
 #```
 
 Next steps: [shell.md](shell.md)
