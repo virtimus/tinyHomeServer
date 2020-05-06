@@ -29,7 +29,7 @@ ln -fs /usr/share/zoneinfo/Europe/Warsaw /etc/localtime && sudo apt-get update &
 
 Install tinyHomeServer core
 ```
-cd /ths && git clone https://github.com/virtimus/tinyHomeServer
+mkdir -p /ths && cd /ths && git clone https://github.com/virtimus/tinyHomeServer
 ```
 
 https://github.com/preactjs/preact/issues/1775
