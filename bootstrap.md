@@ -1,10 +1,11 @@
 # Getting started
 
 ## The installaction standard flow order (manual - md files in this directory)
-- ubuntu-jupyter (system, jupyter notebook)
-- network (adb, tinydb, fs links, hosts, accesspoint) 
+- ubuntu (system, adb, time, ths core)
+- network (adb connect, tinydb, fs links, hosts, accesspoint) 
 - shell (basic ths folders & tools)
 (optional)
+- jupyter
 - python3.7
 - hass (Home Assistant)
 
