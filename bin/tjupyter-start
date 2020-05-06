@@ -1,0 +1,3 @@
+#!/bin/bash
+
+$(cd /ths && jupyter nbextension enable scroll_down/main && echo "n\n" | jupyter notebook --generate-config && jupyter-notebook --port 8888 --ip=0.0.0.0 --allow-root > /var/log/jupyter.log 2>&1) &
