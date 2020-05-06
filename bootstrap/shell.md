@@ -14,4 +14,7 @@ chmod og+x /ths/bin/*
 ```
 
 
+Next steps: 
 
+- [jupyter.md](jupyter.md)
+- [hass.md](Home Assistant - hass.md)
