@@ -95,9 +95,9 @@ Cleanup - remount root FS ro
 adb -s localhost shell su -c 'mount -o remount,ro /'
 ```
 
-Configure and run ap - use macroDroid for autostart on boot
+Configure and run ap(accessPoint) - use macroDroid for autostart on boot
 
-# !TODO! change to soft - normally run by autostart
+#!TODO! change to soft - normally run by autostart
 #```
 #chmod og+x /ths/tinyHomeServer/bin/initap
 #/ths/tinyHomeServer/bin/initap
