@@ -6,7 +6,6 @@
 Prepare libraries
 ```
 sudo apt-get install -y curl libffi6 libffi-dev python3-venv python3-pip  python3.7 python3.7-venv python3.7-dev  
-#pip3 install aiohttp_cors
 cd /tmp && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3.7 get-pip.py
 python3.7 -m pip install virtualenv aiohttp_cors cffi
 ```
