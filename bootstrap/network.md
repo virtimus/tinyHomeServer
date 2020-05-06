@@ -105,6 +105,8 @@ Configure and run ap(accessPoint) - use macroDroid for autostart on boot
 #/ths/tinyHomeServer/bin/initap
 #```
 
+Next steps: [shell.md](shell.md)
+
 
 
 
