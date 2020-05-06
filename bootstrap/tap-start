@@ -1,4 +1,5 @@
 #!/bin/bash
+
 adb connect localhost
 adb -s localhost shell su -c 'am start -n com.android.settings/.TetherSettings' 
 sleep 1
