@@ -55,7 +55,10 @@ print("::1             ip6-localhost")
 print("### ths ###")
 result = db.all() #db.search(qry.intf == '*')
 for x in result:
+    if (x['name'] == "master"):
+        print("%s      ths # mac:%s, intf:%s, lastSeen:%s" % (x['ip'],x['mac'],x['intf'],x['lastSeen']))
     print("%s      %s.ths # mac:%s, intf:%s, lastSeen:%s" % (x['ip'],x['name'],x['mac'],x['intf'],x['lastSeen']))
+
 
     
     
