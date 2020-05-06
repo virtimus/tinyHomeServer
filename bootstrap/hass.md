@@ -29,8 +29,10 @@ hass --open-ui
 Wait till Hass is avalilable at master.ths:8123 and preconfigure it
 
 Then You can install mobile app from Android side 'Home Assistant'
-	- go to Configuration -> Integrations -> + -> Search -> "mobile" -> (failed)
-	- optionaly upgrade to dev version
+
+- go to Configuration -> Integrations -> + -> Search -> "mobile" -> (failed)
+- optionaly upgrade to dev version
+	
 	```
 	#pip3 install virtualenv
 	#virtualenv --python=/usr/bin/python3.7 homeassistant
@@ -51,7 +53,7 @@ Then You can install mobile app from Android side 'Home Assistant'
 !TODO! autostart config (to be done after tauto(start)
 For now - manual - add line
 ```
-$(cd /ths/homeassistant && hass --open-ui > /var/log/hass.log 2>&1) &
+$(cd /ths/homeassistant && source bin/activate && hass --open-ui > /var/log/hass.log 2>&1) &
 ```
 to /support/autostart.sh file
 
