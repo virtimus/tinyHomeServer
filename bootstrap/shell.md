@@ -13,7 +13,7 @@ cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/thass-start thass-start
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/thosts thosts
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tjupyter-start tjupyter-start
 
-chmod og+x /ths/bin/*
+chmod ug+x /ths/bin/*
 ```
 
 
