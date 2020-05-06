@@ -1,0 +1,3 @@
+#!/bin/bash
+
+$(cd /ths/homeassistant && source bin/activate && hass --open-ui > /var/log/hass.log 2>&1) &
