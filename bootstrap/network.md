@@ -44,6 +44,7 @@ adb -s localhost shell su -c 'chmod a+wrx -R /ths'
 ```
 
 Init external storage shortcut if exists
+```
 if [ -e /host-rootfs/storage/*-* ]; then 
 cat >/tmp/initextstorage.sh << EOF
 #!/bin/bash
@@ -60,7 +61,8 @@ adb -s localhost shell su -c 'cp /ths/int/initextstorage.sh /ths/tmp/initextstor
 adb -s localhost shell su -c 'chmod a+x /ths/tmp/initextstorage.sh'
 adb -s localhost shell su -c '. /ths/tmp/initextstorage.sh'
 ln -sf /storage/sdcard /ths/ext
-fi 
+fi
+```
 
 Init RootFS links
 ```
