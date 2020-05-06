@@ -4,6 +4,8 @@
 ## Connecting device to local network
 
 First You have to connect Your device to Your local network. Use cable (preferred) or wifi settings
+
+
 ## Determine device IP
 
 You can:
@@ -13,7 +15,7 @@ You can:
 
 ## Accessing Your device
 
-- make sure You switched on usb debug on Your device
+- make sure You enabled developer mode and switched on usb debug on Your device
 	
 - install android adb/scrcpy 
 
@@ -45,6 +47,10 @@ adb install /src/UserLAnd/app/build/outputs/apk/debug/app-debug.apk
 ```
 - or downloaded:
 
+```
+wget https://github.com/virtimus/tinyHomeServer/raw/master/bin/UserLAndTuned-alfa.apk
+adb install UserLAndTuned-alfa.apk
+```
 
 Now using scrcpy session go to Applications/UserLand.
 You will have to:
@@ -52,8 +58,9 @@ You will have to:
 - allow UserLand some permissions, 
 - choose Your user/password
 - choose connection type (ssh)
+- ignore warning about wifi if You connected via cable
 
-Install some autostart application from play store  and confgure UserLAnd startup.
+Install some autostart application from play store(ie "Autostart - no root")  and confgure UserLAnd startup on boot.
 
 Restart Your device
 
@@ -61,12 +68,6 @@ Now You should have UserLAnd session avaliable on Your device port 2022
 
 
 Next steps: [ubuntu-jupyter.md](ubuntu-jupyter.md)
-
-## Dir mapping between Android and UL
-
-| UL				| Android                                                   |
-|-------------------|-----------------------------------------------------------|
-| /storage/internal | /storage/self/primary/Android/data/tech.ula/files/storage |
 
 
 

@@ -1,0 +1,62 @@
+#!/usr/local/bin/python
+
+import os
+import sys
+from pathlib import Path
+from datetime import datetime
+
+now = datetime.now() 
+nowStr = now.strftime("%Y-%m-%d %H:%M:%S")
+
+os.system("IFACE=eth0 && read MAC </sys/class/net/$IFACE/address && ip=\"$(ifconfig eth0 | grep 'inet ' | xargs | cut -d' ' -f2) $MAC $IFACE master\" && echo $ip > /ths/tmp/inithosts")
+os.system("arp -a | cut -d' ' -f2,4,7 >> /ths/tmp/inithosts")
+
+from tinydb import TinyDB, Query
+#os.mkdir('/ths/db/etc')
+Path("/ths/db/etc").mkdir(parents=True, exist_ok=True)
+db = TinyDB('/ths/db/etc/hosts.json')
+qry = Query()
+
+#read file
+file1 = open('/ths/tmp/inithosts', 'r') 
+Lines = file1.readlines() 
+print(Lines)
+#alen = len(Lines)
+
+#if alen != 3:
+#    print ('dupa:'+str(alen))
+#    quit()
+    
+count = 0    
+# Strips the newline character 
+for line in Lines: 
+    print(line)
+    lsa = line.strip().split()
+    ipaddr = lsa[0].replace('(','').replace(')','')
+    mac = lsa[1]
+    if mac == "<incomplete>":
+        continue #ignore non active entries
+    intf = lsa[2]
+    try:
+        name = lsa[3]
+    except:
+        name = mac.replace(':','')
+    db.upsert({'mac': mac, 'name': name, 'intf': intf, 'ip': ipaddr,'lastSeen':nowStr},qry.mac == mac)
+    #print(lsa[0])
+    #for ls in lsa:
+    #    print("Line{}: {}".format(count, ls.strip())) 
+
+
+#db.upsert({'name': 'Ann', 'age': 23, 'dupa':{'ehem':1}},qry.name == 'Ann')
+#db.remove(qry.name == 'Ann')
+print("### generated from /ths/bin/inithosts ###")
+print("127.0.0.1       localhost")
+print("::1             ip6-localhost")
+print("### ths ###")
+result = db.all() #db.search(qry.intf == '*')
+for x in result:
+    print("%s      %s.ths # mac:%s, intf:%s, lastSeen:%s" % (x['ip'],x['name'],x['mac'],x['intf'],x['lastSeen']))
+
+    
+    
+    
