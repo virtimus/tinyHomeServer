@@ -13,16 +13,17 @@ python3.7 -m pip install virtualenv aiohttp_cors cffi
 Open & Activate the virtual environment
 ```
 cd /ths/src && python3.7 -m venv homeassistant
-cd /ths/homeassistant &&  source bin/activate
+cd /ths/src/homeassistant &&  source bin/activate
 #cd /ths/homeassistant/bin && ln -sf /usr/bin/python3.7 python3
 ```
 
 Install Home Assistant 
 ```
+cd /ths/src/homeassistant && python3 -m pip install wheel sqlalchemy flask-sqlalchemy
 cd /ths/src/homeassistant && python3 -m pip install homeassistant
 #python3 -m pip install --upgrade homeassistant #to upgrade to newest version
-cd /ths/src/homeassistant && python3 -m pip install --upgrade git+git://github.com/home-assistant/home-assistant.git@dev
-python3 -m pip install sqlalchemy flask-sqlalchemy
+
+#cd /ths/src/homeassistant && python3 -m pip install --upgrade git+git://github.com/home-assistant/home-assistant.git@dev
 ```
 
 Run Home Assistant:
