@@ -53,7 +53,7 @@ Then You can install mobile app from Android side 'Home Assistant'
 !TODO! autostart config (to be done after tauto(start)
 For now - manual - add line
 ```
-$(cd /ths/homeassistant && source bin/activate && hass --open-ui > /var/log/hass.log 2>&1) &
+su - {thsUserName} -c 'thass'
 ```
 to /support/autostart.sh file
 
