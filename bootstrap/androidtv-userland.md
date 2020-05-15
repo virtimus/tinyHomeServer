@@ -9,8 +9,11 @@ First You have to connect Your device to Your local network. Use cable (preferre
 ## Determine device IP
 
 You can:
+
 	- read it from the device (System/App info)
+	
 	- use Your router status page 
+	
 	- install nmap, check Your machine ip (ifconfig/ipconfig) and scan for connected devices (nmap -sn 192.168.[X].0/24)
 
 ## Accessing Your device
