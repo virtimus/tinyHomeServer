@@ -1,0 +1,15 @@
+#!bin/bash
+
+echo "Not implemented!"
+exit;
+
+#adb connect localhost && sdb shell -c 
+
+#turn on tv
+#echo 0x40 0x04 > /sys/class/cec/cmd
+
+#change input source to HDMI 1
+##echo 0x4F 0x82 0x10 0x00 > /sys/class/cec/cmd
+
+#change input source to HDMI 1
+#echo 0x4F 0x82 0x10 0x00 > /sys/class/cec/cmd

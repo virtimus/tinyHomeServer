@@ -1,13 +1,13 @@
 
 #@bashMarkupScript:0.0.1
-#@depends:shell,python3.7(opt)
+#@depends:bs,python3.7(opt)
 #@refs:https://www.home-assistant.io/docs/installation/virtualenv/
 
 Prepare libraries
 ```
 sudo apt-get install -y curl libffi6 libffi-dev python3-venv python3-pip  python3.7 python3.7-venv python3.7-dev  
 cd /tmp && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3.7 get-pip.py
-python3.7 -m pip install virtualenv aiohttp_cors cffi
+python3.7 -m pip install virtualenv aiohttp_cors cffi wheel sqlalchemy flask-sqlalchemy
 ```
 
 Open & Activate the virtual environment
@@ -19,7 +19,6 @@ cd /ths/src/homeassistant &&  source bin/activate
 
 Install Home Assistant 
 ```
-cd /ths/src/homeassistant && python3 -m pip install wheel sqlalchemy flask-sqlalchemy
 cd /ths/src/homeassistant && python3 -m pip install homeassistant
 #python3 -m pip install --upgrade homeassistant #to upgrade to newest version
 
@@ -50,5 +49,9 @@ For now - manual - add line
 su - {thsUserName} -c 'thass'
 ```
 to /support/autostart.sh file
+
+Next steps: 
+
+- [AIS dom - ais-dom.md](ais-dom.md)
 
 	

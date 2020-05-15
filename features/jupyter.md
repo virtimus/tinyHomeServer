@@ -1,6 +1,6 @@
 
 #@bashMarkupScript:0.0.1
-#@depends:ubuntu, shell
+#@depends:bs
 
 Install from source jupyter notebook and some additional extensions
 ```

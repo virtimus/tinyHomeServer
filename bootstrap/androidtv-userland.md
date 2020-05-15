@@ -1,10 +1,10 @@
 # Getting started
+
 (tested on AndroidTV x96max+ model)
 
 ## Connecting device to local network
 
 First You have to connect Your device to Your local network. Use cable (preferred) or wifi settings
-
 
 ## Determine device IP
 
@@ -48,8 +48,8 @@ adb install /src/UserLAnd/app/build/outputs/apk/debug/app-debug.apk
 - or downloaded:
 
 ```
-wget https://github.com/virtimus/tinyHomeServer/raw/master/bin/UserLAndTuned-alfa.apk
-adb install UserLAndTuned-alfa.apk
+cd /tmp && wget https://github.com/virtimus/tinyHomeServer/raw/master/bin/UserLAndTuned-alfa.apk
+cd /tmp && adb install UserLAndTuned-alfa.apk
 ```
 
 Now using scrcpy session go to Applications/UserLand.
