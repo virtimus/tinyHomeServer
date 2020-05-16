@@ -42,12 +42,11 @@ adb devices
 
 If something goes wrong here - try to connect your device to PC using usb cable and apply "adb devices" once again
 
-run scrcpy - You should see Your new device screeen
-
+Run scrcpy - You should see Your new device screeen
 
 ## Installing thsMasterNode
 
-install UserLandTuned 
+Install UserLandTuned 
 
 - compiled from source:
 ```
