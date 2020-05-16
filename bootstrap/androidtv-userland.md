@@ -22,7 +22,7 @@ You can:
 	
 - install android adb/scrcpy 
 
-- set a name "ths" for You master node in hosts file (/etc/hosts on Linux):
+- set a name "ths" for ip of Your master node device in hosts file (/etc/hosts on Linux):
 
 ```
 [device IP] ths
