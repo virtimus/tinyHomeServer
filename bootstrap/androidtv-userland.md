@@ -22,10 +22,16 @@ You can:
 	
 - install android adb/scrcpy 
 
+- set a name "ths" for You master node in hosts file (/etc/hosts on Linux):
+
+```
+[device IP] ths
+```
+
 - access Your device:
 
 ```
-adb connect [device IP]
+adb connect [device IP or name]
 ```
 (should display something like "connected to 192.168.2.112:5555")
 
