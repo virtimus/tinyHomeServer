@@ -19,17 +19,22 @@ Run ths-shell-init script
 ```
 cd /ths/tinyHomeServer/bootstrap && ./ths-shell-init.sh
 ```
+Successful init should end with:
 
-Configure and run ap(accessPoint) - use macroDroid for autostart on boot
+**\[ths-shell-init\] END.**
 
+
+Configure and run ap (accessPoint) - use MacroDroid from play store for autostart of accessPoint on boot.
+
+Use separate password for iot subnet. Referenced as thsPass
+
+<!--
 You can also use procifed script tap-start (currently implementation hardly depends on android settings ui)
 #```
 #chmod og+x /ths/tinyHomeServer/bin/tap-start
 #/ths/tinyHomeServer/bin/tap-start
 #```
-
-
-
+-->
 
 
 Next steps: 
