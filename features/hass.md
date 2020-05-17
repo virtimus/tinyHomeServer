@@ -8,7 +8,7 @@
 
 Connect to ths (ssh ths -p 2022) & run setup script:
 ```
-tsetup features/jupyter
+tsetup s features/hass
 ```
 Successful init should end with:
 
@@ -19,6 +19,7 @@ Wait till Hass is avalilable at http://ths:8123 and preconfigure it
 
 Then You can install mobile app from Android side 'Home Assistant'
 
+<!--
 - go to Configuration -> Integrations -> + -> Search -> "mobile" -> (failed)
 
 	
@@ -39,4 +40,4 @@ Next steps:
 
 - [AIS dom - ais-dom.md](ais-dom.md)
 
-	
+-->	
