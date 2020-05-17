@@ -14,7 +14,7 @@ handleError(){
 if [ $e -ne 0 ];then echo "[ths-shell-init] step $tstep error $e" && exit; fi && ((tstep++))
 }
 
-if false; then
+#if false; then
 echo "[ths-shell-init] Updating Your system ..."
 tstep=1
 sudo apt-get update -y && sudo apt-get install -y  net-tools iputils-ping wget bash git nodejs npm libxml2-dev libxslt-dev python3 python3-pip python3-dev build-essential zip unzip pandoc texlive texlive-xetex python-setuptools python-dev python-pip 
@@ -41,7 +41,7 @@ tstep=0
 ln -fs /usr/share/zoneinfo/Europe/Warsaw /etc/localtime && sudo apt-get update && sudo apt-get install -y tzdata && sudo dpkg-reconfigure -f noninteractive tzdata
 e=$? && handleError 
 
-fi # false
+#fi # false
 #<!--
 #https://github.com/preactjs/preact/issues/1775
 #-->
