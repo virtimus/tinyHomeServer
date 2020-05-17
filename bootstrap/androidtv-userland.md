@@ -77,7 +77,7 @@ Restart Your device
 Now You should have UserLAnd session avaliable on Your device port 2022
 
 
-Next steps: [ubuntu.md](ubuntu.md)
+Next steps: [shell.md](shell.md)
 
 
 
