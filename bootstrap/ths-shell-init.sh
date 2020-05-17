@@ -181,16 +181,16 @@ echo "[ths-shell-init] Create bin folder ..."
 tstep=1
 mkdir -p /ths/bin
 e=$? && handleError 
-cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/jupyter-pass jupyter-pass
-e=$? && handleError 
+#cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/jupyter-pass jupyter-pass
+#e=$? && handleError 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tap-start tap-start
 e=$? && handleError 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/thass-start thass-start
 e=$? && handleError 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/thosts thosts
 e=$? && handleError 
-cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tjupyter-start tjupyter-start
-e=$? && handleError 
+#cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tjupyter-start tjupyter-start
+#e=$? && handleError 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tgit tgit
 e=$? && handleError 
 
