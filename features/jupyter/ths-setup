@@ -41,7 +41,7 @@ cat >/ths/bin/tjupyter-pass << EOF
 #!/bin/bash
 #@desc: Jupyter password 
 token=\$(cat /ths/rootUL/var/log/jupyter.log | grep -Pom1 'token=\K[^"]+')
-echo $token
+echo \$token
 EOF
 e=$? && handleError
 chmod ug+rx /ths/bin/tjupyter-pass
