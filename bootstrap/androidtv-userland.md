@@ -2,6 +2,8 @@
 
 (tested on AndroidTV x96max+ model)
 
+https://www.youtube.com/watch?v=SiihcFD1fGI
+
 ## Connecting device to local network
 
 First You have to connect Your device to Your local network. Use cable (preferred) or wifi settings
