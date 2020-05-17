@@ -7,6 +7,13 @@ thsRootAnd=/host-rootfs
 hostapdBin=/vendor/bin/hw/hostapd
 hostapdConf=/data/vendor/wifi/hostapd/hostapd_wlan0.conf
 thsStorage='int'
+e=0
+tstep=1
+
+handleError(){
+if [ $e -ne 0 ];then echo "[ths-shell-init] step $tstep error $e" && exit; fi && ((tstep++))
+}
+
 if false; then
 echo "[ths-shell-init] Updating Your system ..."
 tstep=0
@@ -40,9 +47,12 @@ fi # false
 #-->
 echo "[ths-shell-init] Link some directories for convenient access - UL side (android side in network.md) ..."
 tstep=1
-ln -sf /storage/internal /ths/int
-if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi && ((tstep++))
-	
+#if [ ! -e /ths/int/internal ]; then
+	ln -sf /storage/internal /ths/int
+	e=$? && handleError 
+#else
+#	echo "[ths-shell-init] folder exists - skippig ..."
+#fi
 	
 echo "[ths-shell-init] Connect ADB ..."
 tstep=0
