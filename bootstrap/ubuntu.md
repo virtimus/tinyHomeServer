@@ -35,8 +35,9 @@ Install tinyHomeServer core
 ```
 mkdir -p /ths/src && cd /ths/src && if [ ! -e /ths/src/tinyHomeServer ]; then git clone https://github.com/virtimus/tinyHomeServer; else cd tinyHomeServer && git pull; fi
 ```
-
+<!--
 https://github.com/preactjs/preact/issues/1775
+-->
 Link some directories for convenient access - UL side (android side in network.md)
 ```
 ln -sf /storage/internal /ths/int 
