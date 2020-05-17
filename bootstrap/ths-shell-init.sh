@@ -94,16 +94,16 @@ echo "[ths-shell-init] Init external storage shortcut if exists ..."
 tstep=0
 if [ -e /host-rootfs/storage/*-* ]; then 
 	thsStorage='ext'
-	cat >/tmp/initextstorage.sh << EOF
-	#!/bin/bash
-	cd /storage/*-*
-	rpath=\$(pwd)
-	cd /storage/*-*/Android/data/tech.ula/files/storage
-	#mkdir -p thsExt
-	#cd thsExt
-	ln -sf \$(pwd) /ths/ext
-	ln -sf \$(pwd) \$rpath/thsExt
-	EOF
+cat >/tmp/initextstorage.sh << EOF
+#!/bin/bash
+cd /storage/*-*
+rpath=\$(pwd)
+cd /storage/*-*/Android/data/tech.ula/files/storage
+#mkdir -p thsExt
+#cd thsExt
+ln -sf \$(pwd) /ths/ext
+ln -sf \$(pwd) \$rpath/thsExt
+EOF
 	adb -s localhost push /tmp/initextstorage.sh /ths/int/initextstorage.sh
 	adb -s localhost shell su -c 'cp /ths/int/initextstorage.sh /ths/tmp/initextstorage.sh && rm /ths/int/initextstorage.sh'
 	adb -s localhost shell su -c 'chmod a+x /ths/tmp/initextstorage.sh'
