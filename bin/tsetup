@@ -11,7 +11,7 @@ handleError(){
 }
 
 handleHeader(){
-	echo "[tsetup] $msg ..."
+	echo "=== [tsetup] === $msg ..."
 	tstep=1
 }
 
