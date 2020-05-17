@@ -39,5 +39,5 @@ You can also use procifed script tap-start (currently implementation hardly depe
 
 Next steps: 
 
-- [Jupyter Notebook - jupyter.md](jupyter.md)
-- [Home Assistant - hass.md](hass.md)
+- [Jupyter Notebook - jupyter.md](../jupyter.md)
+- [Home Assistant - hass.md](../hass.md)
