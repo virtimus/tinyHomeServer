@@ -1,6 +1,6 @@
 
 msg='Prepare libraries' handleHeader
-sudo apt-get install -y curl libffi6 libffi-dev python3-venv python3-pip  python3.7 python3.7-venv python3.7-dev  
+sudo apt-get install -y curl libffi6 libffi-dev python3-venv python3-pip python3-wheel python3.7 python3.7-venv python3.7-dev  
 e=$? && handleError
 cd /tmp && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3.7 get-pip.py
 e=$? && handleError
