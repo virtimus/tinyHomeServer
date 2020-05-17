@@ -1,20 +1,34 @@
 
+<!--
 #@bashMarkupScript:0.0.1
-#@depends:network
-#@param:storage:ext:ext|int
+#@depends:androidtv-userland
+-->
 
-Create bin folder
+Connect to Your device via ssh 
 ```
-mkdir -p /ths/{storage}/bin
-ln -sf /ths/{storage}/bin /ths/bin
-cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/jupyter-pass jupyter-pass
-cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tap-start tap-start
-cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/thass-start thass-start
-cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/thosts thosts
-cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tjupyter-start tjupyter-start
+ssh ths -p 2022
+```
 
-chmod ug+x /ths/bin/*
+Install tinyHomeServer core
 ```
+sudo apt-get update -y && sudo apt-get install -y git && mkdir -p /ths/src && cd /ths && if [ ! -e /ths/tinyHomeServer ]; then git clone https://github.com/virtimus/tinyHomeServer; else cd tinyHomeServer && git pull; fi
+```
+
+Run ths-shell-init script
+```
+cd /ths/tinyHomeServer/bootstrap && ./ths-shell-init.sh
+```
+
+Configure and run ap(accessPoint) - use macroDroid for autostart on boot
+
+You can also use procifed script tap-start (currently implementation hardly depends on android settings ui)
+#```
+#chmod og+x /ths/tinyHomeServer/bin/tap-start
+#/ths/tinyHomeServer/bin/tap-start
+#```
+
+
+
 
 
 Next steps: 
