@@ -27,6 +27,9 @@ case "$2" in
     source $thsHome/features/jupyter/ths-setup
 		;;
 
+  features/hass)
+    source $thsHome/features/hass/ths-setup
+		;;
 	*)
 			echo "Basic usage: $0 s|d|l [featureName]";
 
