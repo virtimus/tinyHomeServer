@@ -11,7 +11,8 @@ ssh ths -p 2022
 
 Install tinyHomeServer core
 ```
-sudo apt-get update -y && sudo apt-get install -y git && mkdir -p /ths/src && cd /ths && if [ ! -e /ths/tinyHomeServer ]; then git clone https://github.com/virtimus/tinyHomeServer; else cd tinyHomeServer && git pull; fi
+sudo apt-get update -y && sudo apt-get install -y git 
+mkdir -p /ths/src && cd /ths && if [ ! -e /ths/tinyHomeServer ]; then git clone https://github.com/virtimus/tinyHomeServer; else cd tinyHomeServer && git pull; fi
 ```
 
 Run ths-shell-init script
