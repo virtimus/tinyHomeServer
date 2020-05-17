@@ -21,7 +21,7 @@ if (a_oper=='s'):
   #/ths/bin/thass-start
 
 elif (a_oper=='d'):
-  print("Unimplemented."
+  print("Unimplemented.")
 else:
   print("")
 
