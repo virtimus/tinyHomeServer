@@ -26,8 +26,8 @@ fi # false
 msg='Create startup script (tjupyter-start) and password reader (tjupyter-pass)' handleHeader
 cat >/ths/bin/tjupyter-start << EOF
 #!/bin/bash
-pgrep -x tjupyter-start
-if [ $? -eq 0 ]; then
+cc1=\$(pgrep tjupyter-start | wc -l)
+if [ \$cc1 -gt 1 ]; then
   echo "tjupyter-start already running."
   exit 1;
 fi
