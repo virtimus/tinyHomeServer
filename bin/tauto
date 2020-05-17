@@ -1,4 +1,24 @@
-#!bin/bash
+#!/usr/local/bin/python
 
-echo "Not implemented!"
-exit;
+user=mb
+
+from tinydb import TinyDB, Query
+
+db = TinyDB('/ths/db/autostart.json')
+qry = Query()
+
+print("#!/bin/bash")
+print("### generated from /ths/db/autostart.json (TinyDB) ###")
+print("#/ths/bin/initap > /var/log/initap.log 2>&1")
+print("adb connect localhost")
+
+db.upsert({'name': 'jupyter', 'command': '/ths/bin/tjupyter-start'}, qry.name == 'jupyter')
+#/ths/bin/thass-start
+
+result = db.all() #db.search(qry.intf == '*')
+for x in result:
+  print("su - %s -c '%s'" % (user,x['command']))
+print("### ths ###")
+
+#su - mb -c '/ths/bin/tjupyter-start'
+
