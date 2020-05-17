@@ -6,8 +6,10 @@ from tinydb import TinyDB, Query
 db = TinyDB('/ths/db/autostart.json')
 qry = Query()
 
-import sys
 
+
+##################### operations
+import sys
 a_oper=None
 if len(sys.argv)>1:
   a_oper=sys.argv[1]
@@ -26,11 +28,11 @@ if (a_oper=='s'):
   #/ths/bin/thass-start
 
 elif (a_oper=='d'):
-  print("Unimplemented.")
-else:
-  print("")
+  a_name=sys.argv[2]
+  db.remove(qry.name == a_name)
 
-        
+##################### output
+  
 #header        
 print("#!/bin/bash")
 print("######################################################")
