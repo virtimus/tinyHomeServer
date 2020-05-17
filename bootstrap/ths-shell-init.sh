@@ -123,10 +123,8 @@ e=$? && handleError #1
 	e=$? && handleError #3
 	adb -s localhost shell su -c 'chmod a+x /ths/tmp/initextstorage.sh'
 	e=$? && handleError #4
-	echo "==="
 	adb -s localhost shell su -c '. /ths/tmp/initextstorage.sh'
 	e=$? && handleError #5
-	echo "---"
 	ln -sf /storage/sdcard /ths/ext
 	e=$? && handleError 
 fi
@@ -181,8 +179,10 @@ e=$? && handleError
 
 echo "[ths-shell-init] Create bin folder ..."
 tstep=1
+echo "mkdir -p /ths/$thsStorage/bin"
 mkdir -p /ths/$thsStorage/bin
-e=$? && handleError 
+e=$? && handleError
+echo "==="
 ln -sf /ths/$thsStorage/bin /ths/bin
 e=$? && handleError 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/jupyter-pass jupyter-pass
