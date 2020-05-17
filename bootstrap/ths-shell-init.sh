@@ -148,10 +148,11 @@ adb -s localhost shell su -c 'mount -o remount,ro /'
 ((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
 
 echo "[ths-shell-init] Create bin folder ..."
-tstep=0
+tstep=1
 mkdir -p /ths/$thsStorage/bin
 ln -sf /ths/$thsStorage/bin /ths/bin
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/jupyter-pass jupyter-pass
+if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi && ((tstep++)) 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tap-start tap-start
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/thass-start thass-start
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/thosts thosts
