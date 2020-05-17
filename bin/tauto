@@ -44,7 +44,7 @@ print("adb connect localhost")
 #content        
 result = db.all() #db.search(qry.intf == '*')
 for x in result:
-  print("su - %s -c '%s'" % (user,x['command']))
+  print("su - %s -c '%s' # name:%s" % (user,x['command'],x['name']))
 print("### ths ###")
 
 #su - mb -c '/ths/bin/tjupyter-start'
