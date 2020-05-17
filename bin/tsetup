@@ -3,6 +3,7 @@
 e=0
 msg=''
 thsHome=/ths/tinyHomeServer
+tstep=1
 
 handleError(){
   if [ $e -ne 0 ];then echo "[ths-shell-init] step $tstep error $e" && exit; fi && ((tstep++))
@@ -10,6 +11,7 @@ handleError(){
 
 handleHeader(){
 	echo "[tsetup] $msg ..."
+	tstep=1
 }
 
 handleEnd(){
