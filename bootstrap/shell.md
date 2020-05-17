@@ -3,6 +3,8 @@
 #@bashMarkupScript:0.0.1
 #@depends:androidtv-userland
 -->
+https://www.youtube.com/watch?v=O-TR90wMyCI
+
 
 Connect to Your device via ssh 
 ```
