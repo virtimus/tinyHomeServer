@@ -16,30 +16,30 @@ if [ $e -ne 0 ];then echo "[ths-shell-init] step $tstep error $e" && exit; fi &&
 
 if false; then
 echo "[ths-shell-init] Updating Your system ..."
-tstep=0
+tstep=1
 sudo apt-get update -y && sudo apt-get install -y  iputils-ping wget bash git nodejs npm libxml2-dev libxslt-dev python3 python3-pip python3-dev build-essential zip unzip pandoc texlive texlive-xetex python-setuptools python-dev python-pip 
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 pip3 install --upgrade setuptools pip  && ln -sf $(which python3) /usr/local/bin/python && ln -sf $(which pip3) /usr/local/bin/pip
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 ln -sf /usr/bin/python /usr/local/bin/python2 && ln -sf /usr/bin/pip /usr/local/bin/pip2
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 export PATH=/ths/usr/bin:/ths/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 echo "export PATH=/ths/usr/bin:/ths/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" >> ~/.bashrc
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 #sudo apt-get install -y vim jupyter && pip install jupyterlab
 
 
 
 echo "[ths-shell-init] Install android adb tools ..."
-tstep=0
+tstep=1
 sudo apt-get install -y android-tools-adb android-tools-fastboot 
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 
 echo "[ths-shell-init] Set time zone ..."
 tstep=0
 ln -fs /usr/share/zoneinfo/Europe/Warsaw /etc/localtime && sudo apt-get update && sudo apt-get install -y tzdata && sudo dpkg-reconfigure -f noninteractive tzdata
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 
 fi # false
 #<!--
@@ -47,61 +47,61 @@ fi # false
 #-->
 echo "[ths-shell-init] Link some directories for convenient access - UL side (android side in network.md) ..."
 tstep=1
-#if [ ! -e /ths/int/internal ]; then
+if [ ! -e /ths/int/internal ]; then
 	ln -sf /storage/internal /ths/int
 	e=$? && handleError 
-#else
-#	echo "[ths-shell-init] folder exists - skippig ..."
-#fi
+else
+	echo "[ths-shell-init] folder exists - skippig ..."
+fi
 	
 echo "[ths-shell-init] Connect ADB ..."
-tstep=0
+tstep=1
 adb disconnect 
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 adb connect localhost
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 adb devices
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 	
 	
 echo "[ths-shell-init] Create TinyDB ..."
-tstep=0
+tstep=1
 mkdir -p /ths/db
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 pip3 install tinydb
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 #cd /ths/src && tgit cp https://github.com/msiemens/tinydb/
 #cd /ths/src/tinydb && python setup.py install
 	
 	
 echo "[ths-shell-init] Show mounts ..."
-tstep=0
+tstep=1
 #adb -s localhost root restart i conn refused
 #adb -s localhost shell  'su' - interactive
 adb -s localhost shell mount
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 
 
 echo "[ths-shell-init] Remount root FS rw ..."
-tstep=0
+tstep=1
 adb -s localhost shell su -c 'mount -o remount,rw /'
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 
 
 echo "[ths-shell-init] Init temp folders & internal storage shortcut ..."
-tstep=0
+tstep=1
 mkdir -p /ths/tmp
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 adb -s localhost shell su -c 'mkdir -p /ths/tmp'
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 adb -s localhost shell su -c 'ln -sf '$thsIntStoragePath' /ths/int'
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 adb -s localhost shell su -c 'chmod a+wrx -R /ths'
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 
 
 echo "[ths-shell-init] Init external storage shortcut if exists ..."
-tstep=0
+tstep=1
 if [ -e /host-rootfs/storage/*-* ]; then 
 	thsStorage='ext'
 cat >/tmp/initextstorage.sh << EOF
@@ -114,63 +114,88 @@ cd /storage/*-*/Android/data/tech.ula/files/storage
 ln -sf \$(pwd) /ths/ext
 ln -sf \$(pwd) \$rpath/thsExt
 EOF
+e=$? && handleError 
 	adb -s localhost push /tmp/initextstorage.sh /ths/int/initextstorage.sh
+	e=$? && handleError 
 	adb -s localhost shell su -c 'cp /ths/int/initextstorage.sh /ths/tmp/initextstorage.sh && rm /ths/int/initextstorage.sh'
+	e=$? && handleError 
 	adb -s localhost shell su -c 'chmod a+x /ths/tmp/initextstorage.sh'
+	e=$? && handleError 
 	adb -s localhost shell su -c '. /ths/tmp/initextstorage.sh'
+	e=$? && handleError 
 	ln -sf /storage/sdcard /ths/ext
+	e=$? && handleError 
 fi
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 
 
 echo "[ths-shell-init] Init RootFS links ..."
-tstep=0
+tstep=1
 adb -s localhost shell su -c 'ln -sf /data/data/tech.ula/files/1 /ths/rootUL'
+e=$? && handleError 
 ln -sf / /ths/rootUL
+e=$? && handleError 
 adb -s localhost shell su -c 'ln -sf / /ths/rootAnd'
+e=$? && handleError 
 ln -sf /host-rootfs /ths/rootAnd
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 
 
 echo "[ths-shell-init] Create inithosts script and init /etc/hosts ..."
-tstep=0
+tstep=1
 chmod og+x /ths/tinyHomeServer/bin/thosts
+e=$? && handleError 
 echo '#!/bin/bash' > /tmp/ths-inithosts.sh
+e=$? && handleError 
 echo "cat >/etc/hosts << EOF" >> /tmp/ths-inithosts.sh
+e=$? && handleError 
 /ths/tinyHomeServer/bin/thosts >> /tmp/ths-inithosts.sh 
-echo "EOF" >> /tmp/ths-inithosts.sh 
+e=$? && handleError 
+echo "EOF" >> /tmp/ths-inithosts.sh
+e=$? && handleError 
 cat /tmp/ths-inithosts.sh 
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 
 
 echo "[ths-shell-init] Transfer and run inithosts script ..."
-tstep=0
+tstep=1
 adb -s localhost push /tmp/ths-inithosts.sh /ths/int/ths-inithosts.sh 
+e=$? && handleError 
 adb -s localhost shell su -c 'cp /ths/int/ths-inithosts.sh /ths/tmp/ths-inithosts.sh && rm /ths/int/ths-inithosts.sh'
+e=$? && handleError 
 adb -s localhost shell su -c 'chmod a+x /ths/tmp/ths-inithosts.sh'
+e=$? && handleError 
 adb -s localhost shell su -c '. /ths/tmp/ths-inithosts.sh'
+e=$? && handleError 
 sh /tmp/ths-inithosts.sh
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 
 echo "[ths-shell-init] Cleanup & remount root FS ro ..."
-tstep=0
+tstep=1
 adb -s localhost shell su -c 'mount -o remount,ro /'
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+e=$? && handleError 
 
 echo "[ths-shell-init] Create bin folder ..."
 tstep=1
 mkdir -p /ths/$thsStorage/bin
+e=$? && handleError 
 ln -sf /ths/$thsStorage/bin /ths/bin
+e=$? && handleError 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/jupyter-pass jupyter-pass
-if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi && ((tstep++)) 
+e=$? && handleError 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tap-start tap-start
+e=$? && handleError 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/thass-start thass-start
+e=$? && handleError 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/thosts thosts
+e=$? && handleError 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tjupyter-start tjupyter-start
+e=$? && handleError 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tgit tgit
+e=$? && handleError 
 
 chmod ug+x /ths/bin/*
-if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi && ((tstep++)) 
+e=$? && handleError 
 
 
 echo "[ths-shell-init] END."
