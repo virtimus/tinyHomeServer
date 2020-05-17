@@ -4,12 +4,13 @@ user='mb'
 
 from tinydb import TinyDB, Query
 
-
 db = TinyDB('/ths/db/autostart.json')
 qry = Query()
 
 print("#!/bin/bash")
+print("######################################################")
 print("### generated from /ths/db/autostart.json (TinyDB) ###")
+print("######################################################")
 print("#/ths/bin/initap > /var/log/initap.log 2>&1")
 print("adb connect localhost")
 
