@@ -1,11 +1,15 @@
+<!--
 #### made on base of /i3c/dockerfiles/inb
 #--upgrade was causing issues like https://github.com/preactjs/preact/issues/1775
 
 #@bashMarkupScript:0.0.1
 #@depends:androidtv-userland
+-->
 
 Connect to Your device via ssh 
-#@wait:enter
+cat ```
+ssh ths -p 2022
+```
 
 Updating Your system
 ```
@@ -29,7 +33,7 @@ ln -fs /usr/share/zoneinfo/Europe/Warsaw /etc/localtime && sudo apt-get update &
 
 Install tinyHomeServer core
 ```
-mkdir -p /ths/src && cd /ths && git clone https://github.com/virtimus/tinyHomeServer
+mkdir -p /ths/src && cd /ths/src && if [ ! -e /ths/src/tinyHomeServer ]; then git clone https://github.com/virtimus/tinyHomeServer; else cd tinyHomeServer && git pull; fi
 ```
 
 https://github.com/preactjs/preact/issues/1775
