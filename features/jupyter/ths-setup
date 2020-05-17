@@ -1,0 +1,36 @@
+
+msg='Install from source jupyter notebook and some additional extensions' handleHeader
+cd /ths/src && git clone https://github.com/virtimus/notebook && cd notebook && pip3 install -e . && npm run build
+e=$? && handleError 
+cd /ths/src/notebook && pip3 install bash_kernel && python3 -m bash_kernel.install
+e=$? && handleError 
+cd /ths/src/notebook && npm install -g ijavascript && ijsinstall	
+e=$? && handleError 
+cd /ths/src/notebook && pip3 install jupyter_contrib_nbextensions && jupyter contrib nbextension install
+e=$? && handleError 
+
+msg='Install metakernel and bash' handleHeader 
+cd /ths/src && git clone https://github.com/virtimus/metakernel && cd metakernel &&  pip3 install -e .
+e=$? && handleError
+cd /ths/src && git clone https://github.com/virtimus/calysto_bash && cd calysto_bash && pip3 install -e . && python3 -m calysto_bash install
+e=$? && handleError
+
+jupyterHome=/ths
+
+msg='Generate config' handleHeader 
+cd /ths && echo "n\n" | jupyter notebook --generate-config
+e=$? && handleError
+
+msg='Create startup script' handleHeader
+cat >/tmp/initextstorage.sh << EOF
+#!/bin/bash
+$(cd /ths && jupyter nbextension enable scroll_down/main && jupyter-notebook --port 8888 --ip=0.0.0.0 --allow-root > /var/log/jupyter.log 2>&1) &
+EOF
+e=$? && handleError
+
+msg='Setup jupyter autostart and run jupyter' handleHeader 
+tauto s name:jupyter {name:'jupyter', command:'tjupyter-start'}
+e=$? && handleError
+tjupyter-start
+
+handleEnd
