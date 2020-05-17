@@ -1,0 +1,17 @@
+#!/bin/bash
+
+case "$1" in
+
+  cp|cloneorpull)
+		#_bs "${@:2}";
+    s=$2
+    s=${s##*/}
+    s=${s%.*}
+    p=$(pwd)
+    if [ ! -e $p/$s ]; then git clone $2; else cd $s && git pull; fi    
+		;;
+
+	*)
+			echo "Basic usage: $0 cp|cloneorpull";
+
+esac
