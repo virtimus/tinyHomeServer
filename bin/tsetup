@@ -19,14 +19,18 @@ handleEnd(){
 }
 
 
+_set(){
 
-case "$1" in
+}
+
+
+case "$2" in
 
   features/jupyter)
     source $thsHome/features/jupyter/ths-setup
 		;;
 
 	*)
-			echo "Basic usage: $0 [featureName]";
+			echo "Basic usage: $0 s|d|l [featureName]";
 
 esac
