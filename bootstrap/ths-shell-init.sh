@@ -189,8 +189,8 @@ cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/thass-start thass-start
 e=$? && handleError 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/thosts thosts
 e=$? && handleError 
-#cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tjupyter-start tjupyter-start
-#e=$? && handleError 
+cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tauto tauto
+e=$? && handleError 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tgit tgit
 e=$? && handleError 
 
