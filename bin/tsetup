@@ -19,10 +19,6 @@ handleEnd(){
 }
 
 
-_set(){
-
-}
-
 
 case "$2" in
 
