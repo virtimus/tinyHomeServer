@@ -14,7 +14,7 @@ Successful init should end with:
 
 Wait till Jupyter notebook is avalilable at http://ths:8888 
 
-The authorisation token shloud be accessinle using tjupyter-pass command:
+The authorisation token should be accessible using tjupyter-pass command:
 ```
 tjupyter-pass
 ```
