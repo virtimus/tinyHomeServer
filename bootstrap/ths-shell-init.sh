@@ -108,7 +108,9 @@ cat >/tmp/initextstorage.sh << EOF
 #!/bin/bash
 cd /storage/*-*
 rpath=\$(pwd)
-cd /storage/*-*/Android/data/tech.ula/files/storage
+cd /storage/*-*/
+mkdir -p Android/data/tech.ula/files/storage
+cd Android/data/tech.ula/files/storage
 #mkdir -p thsExt
 #cd thsExt
 ln -sf \$(pwd) /ths/ext
