@@ -159,7 +159,7 @@ cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tjupyter-start tjupyter-start
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tgit tgit
 
 chmod ug+x /ths/bin/*
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
+if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi && ((tstep++)) 
 
 
-echo "echo "[ths-shell-init] END."
+echo "[ths-shell-init] END."
