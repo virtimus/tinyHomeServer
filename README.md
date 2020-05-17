@@ -30,6 +30,7 @@ User can:
 
 Shell layer- helper scripts an resources
 
+[F3 - Home Assistant](features/hass.md)
 
 ### thsDevMachine
 
