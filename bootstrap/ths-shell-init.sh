@@ -7,7 +7,7 @@ thsRootAnd=/host-rootfs
 hostapdBin=/vendor/bin/hw/hostapd
 hostapdConf=/data/vendor/wifi/hostapd/hostapd_wlan0.conf
 thsStorage='int'
-
+if false; then
 echo "[ths-shell-init] Updating Your system ..."
 tstep=0
 sudo apt-get update -y && sudo apt-get install -y  iputils-ping wget bash git nodejs npm libxml2-dev libxslt-dev python3 python3-pip python3-dev build-essential zip unzip pandoc texlive texlive-xetex python-setuptools python-dev python-pip 
@@ -34,14 +34,14 @@ tstep=0
 ln -fs /usr/share/zoneinfo/Europe/Warsaw /etc/localtime && sudo apt-get update && sudo apt-get install -y tzdata && sudo dpkg-reconfigure -f noninteractive tzdata
 ((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi
 
-
+fi # false
 #<!--
 #https://github.com/preactjs/preact/issues/1775
 #-->
 echo "[ths-shell-init] Link some directories for convenient access - UL side (android side in network.md) ..."
-tstep=0
+tstep=1
 ln -sf /storage/internal /ths/int
-((tstep++)) && if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi 
+if [ $? -ne 0 ];then echo "[ths-shell-init] step $tstep error $?" && exit; fi && ((tstep++))
 	
 	
 echo "[ths-shell-init] Connect ADB ..."
