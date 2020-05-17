@@ -21,11 +21,22 @@ msg='Generate config' handleHeader
 cd /ths && echo "n\n" | jupyter notebook --generate-config
 e=$? && handleError
 
-msg='Create startup script' handleHeader
-cat >/tmp/initextstorage.sh << EOF
+msg='Create startup script (tjupyter-start) and password reader (tjupyter-pass)' handleHeader
+cat >/ths/bin/tjupyter-start << EOF
 #!/bin/bash
 $(cd /ths && jupyter nbextension enable scroll_down/main && jupyter-notebook --port 8888 --ip=0.0.0.0 --allow-root > /var/log/jupyter.log 2>&1) &
 EOF
+e=$? && handleError
+chmod ug+rx /ths/bin/tjupyter-start
+e=$? && handleError
+cat >/ths/bin/tjupyter-pass << EOF
+#!/bin/bash
+#@desc: Jupyter password 
+token=$(cat /ths/rootUL/var/log/jupyter.log | grep -Pom1 'token=\K[^"]+')
+echo $token
+EOF
+e=$? && handleError
+chmod ug+rx /ths/bin/tjupyter-pass
 e=$? && handleError
 
 msg='Setup jupyter autostart and run jupyter' handleHeader 
