@@ -1,0 +1,40 @@
+
+msg='Prepare libraries' handleHeader
+sudo apt-get install -y curl libffi6 libffi-dev python3-venv python3-pip  python3.7 python3.7-venv python3.7-dev  
+e=$? && handleError
+cd /tmp && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3.7 get-pip.py
+e=$? && handleError
+python3.7 -m pip install virtualenv aiohttp_cors cffi wheel sqlalchemy flask-sqlalchemy
+e=$? && handleError
+
+msg='Open & Activate the virtual environment' handleHeader
+cd /ths/src && python3.7 -m venv homeassistant
+e=$? && handleError
+cd /ths/src/homeassistant &&  source bin/activate
+e=$? && handleError
+#cd /ths/homeassistant/bin && ln -sf /usr/bin/python3.7 python3
+e=$? && handleError
+
+msg='Install Home Assistant' handleHeader
+cd /ths/src/homeassistant && python3 -m pip install homeassistant
+e=$? && handleError
+#python3 -m pip install --upgrade homeassistant #to upgrade to newest version
+#cd /ths/src/homeassistant && python3 -m pip install --upgrade git+git://github.com/home-assistant/home-assistant.git@dev
+
+msg='Setup autostart & run Home Assistant' handleHeader
+cat >/ths/bin/thass-start << EOF
+#!/bin/bash
+cc1=\$(pgrep thass-start | wc -l)
+echo \$cc1;
+if [ \$cc1 -gt 2 ]; then
+  echo "thass-start already running."
+  exit 1;
+fi
+\$(cd /ths/src/homeassistant && source bin/activate && hass --open-ui > /var/log/hass.log 2>&1) &
+EOF
+e=$? && handleError
+chmod ug+rx /ths/bin/thass-start
+e=$? && handleError
+tauto s hass '{"name":"hass", "command":"/ths/bin/thass-start"}' > /support/autostart.sh
+e=$? && handleError
+thass-start
