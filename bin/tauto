@@ -3,10 +3,30 @@
 user='mb'
 
 from tinydb import TinyDB, Query
-
 db = TinyDB('/ths/db/autostart.json')
 qry = Query()
 
+import sys
+a_oper=sys.argv[1]
+
+if (a_oper=='s'):
+
+  a_name=sys.argv[2]
+  a_json=sys.argv[3]
+
+  import json
+  docVal=json.loads(a_json)
+
+  db.upsert(docVal, qry.name == a_name)
+  #/ths/bin/thass-start
+
+elif (a_oper=='d'):
+  print("Unimplemented."
+else:
+  print("")
+
+        
+#header        
 print("#!/bin/bash")
 print("######################################################")
 print("### generated from /ths/db/autostart.json (TinyDB) ###")
@@ -14,9 +34,7 @@ print("######################################################")
 print("#/ths/bin/initap > /var/log/initap.log 2>&1")
 print("adb connect localhost")
 
-db.upsert({'name': 'jupyter', 'command': '/ths/bin/tjupyter-start'}, qry.name == 'jupyter')
-#/ths/bin/thass-start
-
+#content        
 result = db.all() #db.search(qry.intf == '*')
 for x in result:
   print("su - %s -c '%s'" % (user,x['command']))
