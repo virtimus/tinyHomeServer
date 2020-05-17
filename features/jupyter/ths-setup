@@ -1,6 +1,6 @@
 
 msg='Install from source jupyter notebook and some additional extensions' handleHeader
-cd /ths/src && git clone https://github.com/virtimus/notebook && cd notebook && pip3 install -e . && npm run build
+cd /ths/src && tgit cp https://github.com/virtimus/notebook && cd notebook && pip3 install -e . && npm run build
 e=$? && handleError 
 cd /ths/src/notebook && pip3 install bash_kernel && python3 -m bash_kernel.install
 e=$? && handleError 
@@ -10,9 +10,9 @@ cd /ths/src/notebook && pip3 install jupyter_contrib_nbextensions && jupyter con
 e=$? && handleError 
 
 msg='Install metakernel and bash' handleHeader 
-cd /ths/src && git clone https://github.com/virtimus/metakernel && cd metakernel &&  pip3 install -e .
+cd /ths/src && tgit cp https://github.com/virtimus/metakernel && cd metakernel &&  pip3 install -e .
 e=$? && handleError
-cd /ths/src && git clone https://github.com/virtimus/calysto_bash && cd calysto_bash && pip3 install -e . && python3 -m calysto_bash install
+cd /ths/src && tgit cp https://github.com/virtimus/calysto_bash && cd calysto_bash && pip3 install -e . && python3 -m calysto_bash install
 e=$? && handleError
 
 jupyterHome=/ths
