@@ -47,7 +47,7 @@ fi # false
 #-->
 echo "[ths-shell-init] Link some directories for convenient access - UL side (android side in network.md) ..."
 tstep=1
-if [ ! -e /ths/int/internal ]; then
+if [ ! -e /ths/int ]; then
 	ln -sf /storage/internal /ths/int
 	e=$? && handleError 
 else
