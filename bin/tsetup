@@ -1,10 +1,22 @@
 #!/bin/bash
 
+e=0
+msg=''
+thsHome=/ths/tinyHomeServer
+
 handleError(){
   if [ $e -ne 0 ];then echo "[ths-shell-init] step $tstep error $e" && exit; fi && ((tstep++))
 }
 
-thsHome=/ths/tinyHomeServer
+handleHeader(){
+	echo "[tsetup] $msg ..."
+}
+
+handleEnd(){
+	echo "[tsetup] END."
+}
+
+
 
 case "$1" in
 
