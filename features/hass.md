@@ -6,6 +6,8 @@
 -->
 ## TinyHomeServer F3 Home Assistant
 
+https://www.youtube.com/watch?v=QeBshrCm0Bs
+
 Connect to ths (ssh ths -p 2022) & run setup script:
 ```
 tsetup s features/hass
