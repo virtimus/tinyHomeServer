@@ -1,0 +1,18 @@
+#!/bin/bash
+
+handleError(){
+  if [ $e -ne 0 ];then echo "[ths-shell-init] step $tstep error $e" && exit; fi && ((tstep++))
+}
+
+thsHome=/ths/tinyHomeServer
+
+case "$1" in
+
+  features/jupyter)
+    source $thsHome/features/jupyter/ths-setup
+		;;
+
+	*)
+			echo "Basic usage: $0 [featureName]";
+
+esac
