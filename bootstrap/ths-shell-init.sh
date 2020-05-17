@@ -179,9 +179,9 @@ e=$? && handleError
 
 echo "[ths-shell-init] Create bin folder ..."
 tstep=1
-mkdir -p /ths/$thsStorage/bin
+mkdir -p /ths/int/bin
 e=$? && handleError
-if [ ! -e /ths/bin ]; then ln -sf /ths/$thsStorage/bin /ths/bin; fi
+if [ ! -e /ths/bin ]; then ln -sf /ths/int/bin /ths/bin; fi
 e=$? && handleError 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/jupyter-pass jupyter-pass
 e=$? && handleError 
