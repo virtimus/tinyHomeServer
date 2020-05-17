@@ -1,4 +1,4 @@
-
+<!--
 #@bashMarkupScript:0.0.1
 #@depends:ubuntu
 #@param:thsIntStoragePath:/storage/self/primary/Android/data/tech.ula/files/storage
@@ -7,7 +7,7 @@
 #@param:thsRootAnd:/host-rootfs
 #@param:hostapdBin:/vendor/bin/hw/hostapd
 #@param:hostapdConf:/data/vendor/wifi/hostapd/hostapd_wlan0.conf
-
+-->
 Connect ADB
 ```
 adb disconnect 
@@ -19,8 +19,8 @@ Create TinyDB
 ```
 mkdir -p /ths/db
 pip3 install tinydb
-#cd /ths && git clone https://github.com/msiemens/tinydb/
-#cd /ths/tinydb && python setup.py install
+#cd /ths/src && tgit cp https://github.com/msiemens/tinydb/
+#cd /ths/src/tinydb && python setup.py install
 ```
 
 Show mounts
