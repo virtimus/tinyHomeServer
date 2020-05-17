@@ -38,3 +38,6 @@ e=$? && handleError
 tauto s hass '{"name":"hass", "command":"/ths/bin/thass-start"}' > /support/autostart.sh
 e=$? && handleError
 thass-start
+e=$? && handleError
+handleEnd
+
