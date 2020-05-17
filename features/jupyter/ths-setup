@@ -1,4 +1,4 @@
-if [ false ]; then
+if false; then
 msg='Install from source jupyter notebook and some additional extensions' handleHeader
 cd /ths/src && tgit cp https://github.com/virtimus/notebook && cd notebook && pip3 install -e . && npm run build
 e=$? && handleError 
