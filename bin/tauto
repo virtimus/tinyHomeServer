@@ -1,6 +1,6 @@
 #!/usr/local/bin/python
 
-user=mb
+user='mb'
 
 from tinydb import TinyDB, Query
 
