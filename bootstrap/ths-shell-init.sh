@@ -17,7 +17,7 @@ if [ $e -ne 0 ];then echo "[ths-shell-init] step $tstep error $e" && exit; fi &&
 if false; then
 echo "[ths-shell-init] Updating Your system ..."
 tstep=1
-sudo apt-get update -y && sudo apt-get install -y  iputils-ping wget bash git nodejs npm libxml2-dev libxslt-dev python3 python3-pip python3-dev build-essential zip unzip pandoc texlive texlive-xetex python-setuptools python-dev python-pip 
+sudo apt-get update -y && sudo apt-get install -y  net-tools iputils-ping wget bash git nodejs npm libxml2-dev libxslt-dev python3 python3-pip python3-dev build-essential zip unzip pandoc texlive texlive-xetex python-setuptools python-dev python-pip 
 e=$? && handleError 
 pip3 install --upgrade setuptools pip  && ln -sf $(which python3) /usr/local/bin/python && ln -sf $(which pip3) /usr/local/bin/pip
 e=$? && handleError 
