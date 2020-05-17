@@ -7,7 +7,11 @@ db = TinyDB('/ths/db/autostart.json')
 qry = Query()
 
 import sys
-a_oper=sys.argv[1]
+
+a_oper=None
+if len(sys.argv)>1:
+  a_oper=sys.argv[1]
+
 
 if (a_oper=='s'):
 
