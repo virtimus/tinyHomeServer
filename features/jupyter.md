@@ -12,6 +12,12 @@ Successful init should end with:
 
 **\[tsetup\] END.**
 
+Wait till Hass is avalilable at http://ths:8888 
+
+The authorisation token shloud be accessinle using tjupyter-pass command:
+```
+tjupyter-pass
+```
 
 	
 
