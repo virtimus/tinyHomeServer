@@ -4,6 +4,7 @@ user='mb'
 
 from tinydb import TinyDB, Query
 
+
 db = TinyDB('/ths/db/autostart.json')
 qry = Query()
 
