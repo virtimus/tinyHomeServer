@@ -94,7 +94,7 @@ mkdir -p /ths/tmp
 e=$? && handleError 
 adb -s localhost shell su -c 'mkdir -p /ths/tmp'
 e=$? && handleError 
-adb -s localhost shell su -c 'ln -sf '$thsIntStoragePath' /ths/int'
+adb -s localhost shell su -c 'if [ ! -e /ths/int ]; then ln -sf '$thsIntStoragePath' /ths/int; fi'
 e=$? && handleError 
 adb -s localhost shell su -c 'chmod a+wrx -R /ths'
 e=$? && handleError 
