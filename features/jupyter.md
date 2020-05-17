@@ -4,7 +4,7 @@
 #@depends:bs
 -->
 
-Run setup script:
+Connect to ths (ssh ths -p 2022) & run setup script:
 ```
 tsetup features/jupyter
 ```
