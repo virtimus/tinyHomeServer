@@ -19,6 +19,7 @@ A functional feaure/package of ths:
 
 UserLAnd is an open-source Android app which allows us to run Ubuntu as a base platform for other software.
 User can 
+
 	- ssh access to tinyHomeServer
 	- install Ubuntu packages
 	- use commandline tools
