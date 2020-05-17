@@ -135,13 +135,13 @@ e=$? && handleError
 
 echo "[ths-shell-init] Init RootFS links ..."
 tstep=1
-adb -s localhost shell su -c 'ln -sf /data/data/tech.ula/files/1 /ths/rootUL'
+adb -s localhost shell su -c 'if [ ! -e /ths/rootUL ]\; then ln -sf /data/data/tech.ula/files/1 /ths/rootUL\; fi'
 e=$? && handleError 
-ln -sf / /ths/rootUL
+if [ ! -e /ths/rootUL ]; then ln -sf / /ths/rootUL; fi
 e=$? && handleError 
-adb -s localhost shell su -c 'ln -sf / /ths/rootAnd'
+adb -s localhost shell su -c 'if [ ! -e /ths/rootAnd ]\; then ln -sf / /ths/rootAnd\; fi'
 e=$? && handleError 
-ln -sf /host-rootfs /ths/rootAnd
+if [ ! -e /ths/rootAnd ]; then ln -sf /host-rootfs /ths/rootAnd; fi
 e=$? && handleError 
 
 
