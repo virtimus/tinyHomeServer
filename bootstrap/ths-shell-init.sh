@@ -125,8 +125,8 @@ e=$? && handleError #1
 	e=$? && handleError #4
 	adb -s localhost shell su -c '. /ths/tmp/initextstorage.sh'
 	e=$? && handleError #5
-	ln -sf /storage/sdcard /ths/ext
-	e=$? && handleError 
+	if [ ! -e /ths/ext ]; then ln -sf /storage/sdcard /ths/ext; fi
+	e=$? && handleError #6
 fi
 e=$? && handleError 
 
