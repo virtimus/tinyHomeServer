@@ -7,7 +7,7 @@
 -->
 
 Connect to Your device via ssh 
-cat ```
+```
 ssh ths -p 2022
 ```
 
