@@ -1,36 +1,21 @@
 
+<!--
 #@bashMarkupScript:0.0.1
 #@depends:bs,python3.7(opt)
 #@refs:https://www.home-assistant.io/docs/installation/virtualenv/
+-->
 
-Prepare libraries
-```
-sudo apt-get install -y curl libffi6 libffi-dev python3-venv python3-pip  python3.7 python3.7-venv python3.7-dev  
-cd /tmp && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3.7 get-pip.py
-python3.7 -m pip install virtualenv aiohttp_cors cffi wheel sqlalchemy flask-sqlalchemy
-```
 
-Open & Activate the virtual environment
+Connect to ths (ssh ths -p 2022) & run setup script:
 ```
-cd /ths/src && python3.7 -m venv homeassistant
-cd /ths/src/homeassistant &&  source bin/activate
-#cd /ths/homeassistant/bin && ln -sf /usr/bin/python3.7 python3
+tsetup features/jupyter
 ```
+Successful init should end with:
 
-Install Home Assistant 
-```
-cd /ths/src/homeassistant && python3 -m pip install homeassistant
-#python3 -m pip install --upgrade homeassistant #to upgrade to newest version
+**\[tsetup\] END.**
 
-#cd /ths/src/homeassistant && python3 -m pip install --upgrade git+git://github.com/home-assistant/home-assistant.git@dev
-```
 
-Run Home Assistant:
-```
-hass --open-ui
-```
-
-Wait till Hass is avalilable at master.ths:8123 and preconfigure it
+Wait till Hass is avalilable at http://ths:8123 and preconfigure it
 
 Then You can install mobile app from Android side 'Home Assistant'
 
