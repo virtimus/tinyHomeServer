@@ -17,7 +17,7 @@ Successful init should end with:
 
 Wait till Hass is avalilable at http://ths:8123 and preconfigure it.
 
-It can be long - trace with bellow commmand:
+First start can be long - trace with bellow commmand:
 ```
 tail -f /var/log/hass.log
 ```
