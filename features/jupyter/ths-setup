@@ -18,7 +18,7 @@ e=$? && handleError
 jupyterHome=/ths
 
 msg='Generate config' handleHeader 
-cd /ths && echo "n\n" | jupyter notebook --generate-config
+cd /ths && DEBIAN_FRONTEND=noninteractive  echo "n\n\n\n" | jupyter notebook --generate-config
 e=$? && handleError
 
 msg='Create startup script (tjupyter-start) and password reader (tjupyter-pass)' handleHeader
@@ -40,7 +40,7 @@ chmod ug+rx /ths/bin/tjupyter-pass
 e=$? && handleError
 
 msg='Setup jupyter autostart and run jupyter' handleHeader 
-tauto s name:jupyter {name:'jupyter', command:'tjupyter-start'}
+tauto s jupyter {name:'jupyter', command:'/ths/bin/tjupyter-start'}
 e=$? && handleError
 tjupyter-start
 
