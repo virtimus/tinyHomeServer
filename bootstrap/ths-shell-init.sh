@@ -106,25 +106,27 @@ if [ -e /host-rootfs/storage/*-* ]; then
 	thsStorage='ext'
 cat >/tmp/initextstorage.sh << EOF
 #!/bin/bash
-cd /storage/*-*
-rpath=\$(pwd)
-cd /storage/*-*/
-mkdir -p Android/data/tech.ula/files/storage
-cd Android/data/tech.ula/files/storage
+cd /storage/*-* \
+&& rpath=\$(pwd) \
+&& cd /storage/*-*/ \
+&& mkdir -p Android/data/tech.ula/files/storage \
+&& cd Android/data/tech.ula/files/storage \
+&& if [ ! -e /ths/ext ]; then ln -sf \$(pwd) /ths/ext; fi
+#$ln -sf \$(pwd) \$rpath/thsExt
 #mkdir -p thsExt
 #cd thsExt
-ln -sf \$(pwd) /ths/ext
-ln -sf \$(pwd) \$rpath/thsExt
 EOF
-e=$? && handleError 
+e=$? && handleError #1
 	adb -s localhost push /tmp/initextstorage.sh /ths/int/initextstorage.sh
-	e=$? && handleError 
+	e=$? && handleError #2
 	adb -s localhost shell su -c 'cp /ths/int/initextstorage.sh /ths/tmp/initextstorage.sh && rm /ths/int/initextstorage.sh'
-	e=$? && handleError 
+	e=$? && handleError #3
 	adb -s localhost shell su -c 'chmod a+x /ths/tmp/initextstorage.sh'
-	e=$? && handleError 
+	e=$? && handleError #4
+	echo "==="
 	adb -s localhost shell su -c '. /ths/tmp/initextstorage.sh'
-	e=$? && handleError 
+	e=$? && handleError #5
+	echo "---"
 	ln -sf /storage/sdcard /ths/ext
 	e=$? && handleError 
 fi
