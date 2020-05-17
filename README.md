@@ -15,7 +15,7 @@ Use instructions from [bootstrap.md](bootstrap.md)
 
 A functional feaure/package of ths:
 
-[F1 - UserLAnd](https://www.youtube.com/watch?v=SiihcFD1fGI)
+[F1 - UserLAnd](bootstrap/androidtv-userland.md)
 
 UserLAnd is an open-source Android app which allows us to run Ubuntu as a base platform for other software.
 
@@ -26,7 +26,7 @@ User can:
 - use commandline tools
 - use adb to control Android part
 	
-[F2 - Shell](https://www.youtube.com/watch?v=O-TR90wMyCI)
+[F2 - Shell](bootstrap/shell.md)
 
 Shell layer- helper scripts an resources
 
