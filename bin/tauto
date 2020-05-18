@@ -21,7 +21,7 @@ if (a_oper=='s'):
   a_json=sys.argv[3]
 
   import json
-  print(a_json)
+  #print(a_json)
   docVal=json.loads(a_json)
 
   db.upsert(docVal, qry.name == a_name)
