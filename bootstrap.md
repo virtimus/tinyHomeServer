@@ -1,12 +1,11 @@
 # Getting started
 
 ## The installaction standard flow order
-- AndroidTV/UserLAnd (basic components) 
-https://www.youtube.com/watch?v=SiihcFD1fGI
-- shell (system, adb, time, ths core, adb connect, tinydb, fs links, hosts, accesspoint, basic ths folders & tools)
+- [AndroidTV/UserLAnd (basic components)](https://www.youtube.com/watch?v=SiihcFD1fGI)
+- [shell (system, adb, time, ths core, adb connect, tinydb, fs links, hosts, accesspoint, basic ths folders & tools)](https://www.youtube.com/watch?v=O-TR90wMyCI)
 (optional)
+- [hass (Home Assistant)](https://www.youtube.com/watch?v=QeBshrCm0Bs)
 - jupyter(python3.7, Jupyter Notebook)
-- hass (Home Assistant)
 
 ## in progress:
 - espcam32 connect (ESPHome)
@@ -16,7 +15,7 @@ https://www.youtube.com/watch?v=SiihcFD1fGI
 - simple task automation, flow organizer, data storage
 
 ## Platforms
-Currently only AndroidTV/UserLand platform [bootstrap/androidtv-userland.md](bootstrap/androidtv-userland.md) 
+Currently only AndroidTV/UserLAnd platform [bootstrap/androidtv-userland.md](bootstrap/androidtv-userland.md) 
 
 
 ## Future:
