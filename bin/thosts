@@ -15,11 +15,63 @@ qry = Query()
 import sys
 a_oper=None
 if len(sys.argv)>1:
-  a_oper=sys.argv[1]
+    a_oper = sys.argv[1]
 
-if (a_oper=='d'):
-  a_name=sys.argv[2]
-  db.remove(qry.mac == a_name)
+if (a_oper == 's'):
+    print("ERROR:ReadOnly")
+    sys.exit(1)
+  
+if (a_oper=='g'):    
+    a_name = sys.argv[2]
+    f_name = None
+    k_name = None
+    res = None
+    if len(sys.argv)>3:
+        f_name = sys.argv[3]
+        #print("fname:"+f_name)
+    if (f_name == None or f_name == 'by:mac'):    
+        res = db.search(qry.mac == a_name)
+    elif (f_name.startswith('by:')):
+        valarr = f_name.split(':')
+        #print(valarr)
+        k_name = valarr[1]
+        f_name = None
+        if len(sys.argv)>4:
+            f_name = sys.argv[4]
+    elif (a_name.startswith('by:')):
+        valarr = a_name.split(':')
+        k_name = valarr[1]
+        a_name = f_name
+        f_name = None
+        if len(sys.argv)>4:
+            f_name = sys.argv[4]        
+        
+    if (res == None):
+        if (k_name == None):
+            res = db.search(qry.mac == a_name)
+        else:
+            #setattr(qry,k_name,a_name)
+            #print('runn:'+k_name+' '+a_name)
+            if (k_name == 'name' and a_name == 'ths'):
+                a_name = 'master'
+            res = db.search(qry[k_name] == a_name)
+            #res = db.all()
+    #print(res)
+    res1 = res[0]
+    if (f_name == None):
+        print(res1)
+    else:
+        print(res1[f_name])
+    sys.exit(0)
+    
+     
+    
+    
+    
+
+if (a_oper == 'd'):
+    a_name=sys.argv[2]
+    db.remove(qry.mac == a_name)
 
 
 now = datetime.now() 
