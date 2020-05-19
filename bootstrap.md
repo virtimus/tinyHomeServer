@@ -1,7 +1,8 @@
 # Getting started
 
 ## The installaction standard flow order
-- AndroidTV/UserLAnd (basic components)
+- AndroidTV/UserLAnd (basic components) 
+https://www.youtube.com/watch?v=SiihcFD1fGI
 - shell (system, adb, time, ths core, adb connect, tinydb, fs links, hosts, accesspoint, basic ths folders & tools)
 (optional)
 - jupyter(python3.7, Jupyter Notebook)
