@@ -4,18 +4,33 @@ import os
 import sys
 from pathlib import Path
 from datetime import datetime
-
-now = datetime.now() 
-nowStr = now.strftime("%Y-%m-%d %H:%M:%S")
-
-os.system("IFACE=eth0 && read MAC </sys/class/net/$IFACE/address && ip=\"$(ifconfig eth0 | grep 'inet ' | xargs | cut -d' ' -f2) $MAC $IFACE master\" && echo $ip > /ths/tmp/inithosts")
-os.system("arp -a | cut -d' ' -f2,4,7 >> /ths/tmp/inithosts")
-
 from tinydb import TinyDB, Query
+
 #os.mkdir('/ths/db/etc')
 Path("/ths/db/etc").mkdir(parents=True, exist_ok=True)
 db = TinyDB('/ths/db/etc/hosts.json')
 qry = Query()
+
+##################### operations
+import sys
+a_oper=None
+if len(sys.argv)>1:
+  a_oper=sys.argv[1]
+
+if (a_oper=='d'):
+  a_name=sys.argv[2]
+  db.remove(qry.mac == a_name)
+
+
+now = datetime.now() 
+nowStr = now.strftime("%Y-%m-%d %H:%M:%S")
+
+os.system("IFACE=eth0 && read MAC </sys/class/net/$IFACE/address && ip=\"$(ifconfig $IFACE | grep 'inet ' | xargs | cut -d' ' -f2) $MAC $IFACE master\" && echo $ip > /ths/tmp/inithosts")
+os.system("arp -a | cut -d' ' -f2,4,7 >> /ths/tmp/inithosts")
+
+
+
+
 
 #read file
 file1 = open('/ths/tmp/inithosts', 'r') 
