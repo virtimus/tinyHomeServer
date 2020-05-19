@@ -8,6 +8,8 @@
 - hass (Home Assistant)
 
 ## in progress:
+- espcam32 connect (ESPHome)
+- smart doorbell (redir to smartphone etc)
 - nextcloud (access via webdav/web disk, local teleconf, document repository etc)
 - port/domain forward (access to components via name)
 - simple task automation, flow organizer, data storage
