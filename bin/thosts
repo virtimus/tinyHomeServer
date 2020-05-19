@@ -35,12 +35,8 @@ os.system("arp -a | cut -d' ' -f2,4,7 >> /ths/tmp/inithosts")
 #read file
 file1 = open('/ths/tmp/inithosts', 'r') 
 Lines = file1.readlines() 
-print(Lines)
+#print(Lines)
 #alen = len(Lines)
-
-#if alen != 3:
-#    print ('dupa:'+str(alen))
-#    quit()
     
 count = 0    
 # Strips the newline character 
