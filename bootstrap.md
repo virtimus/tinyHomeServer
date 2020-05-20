@@ -4,10 +4,10 @@
 Currently only AndroidTV/UserLAnd platform [bootstrap/androidtv-userland.md](bootstrap/androidtv-userland.md) 
 
 ## The installation standard flow order
-- [AndroidTV/UserLAnd (basic components)](https://www.youtube.com/watch?v=SiihcFD1fGI)
-- [shell (system, adb, time, ths core, adb connect, tinydb, fs links, hosts, accesspoint, basic ths folders & tools)](https://www.youtube.com/watch?v=O-TR90wMyCI)
+- [F1 - AndroidTV/UserLAnd (basic components)](https://www.youtube.com/watch?v=SiihcFD1fGI)
+- [F2 - shell (system, adb, time, ths core, adb connect, tinydb, fs links, hosts, accesspoint, basic ths folders & tools)](https://www.youtube.com/watch?v=O-TR90wMyCI)
 (optional)
-- [hass (Home Assistant)](https://www.youtube.com/watch?v=QeBshrCm0Bs)
+- [F3 - hass (Home Assistant)](https://www.youtube.com/watch?v=QeBshrCm0Bs)
 - jupyter(python3.7, Jupyter Notebook)
 
 ## in progress:
