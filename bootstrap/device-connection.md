@@ -17,12 +17,14 @@ You can:
 	- use Your router status page 
 	
 	- install nmap, check Your machine ip (ifconfig/ipconfig) and scan for connected devices (nmap -sn 192.168.[X].0/24)
+	
+	- use arp command 
 
 ## Accessing Your device
 
 - Make sure You enabled developer mode and switched on usb debug on Your device
 	
-- Install android adb/scrcpy 
+- Install android adb/scrcpy on Your computer (or install full [thsDevMachine](../bootstrap-dev/shell,md))
 
 - Set a name "ths" for ip of Your master node device in hosts file (/etc/hosts on Linux):
 

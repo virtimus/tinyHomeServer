@@ -1,0 +1,19 @@
+FROM virtimus/ths:mintDesktop
+
+
+RUN apt update -y \
+	`#Runtime dependencies` && apt install -y ffmpeg libsdl2-2.0-0 adb xorg-dev  \
+	`#Client build dependencies` && DEBIAN_FRONTEND=noninteractive apt install -y gcc git pkg-config meson ninja-build libavcodec-dev libavformat-dev libavutil-dev libsdl2-dev \
+	`#Server build dependencies` && apt install -y openjdk-8-jdk \
+	`# meson` && sudo apt install -y python3-pip python3-setuptools python3-wheel && sudo -H pip3 install --upgrade pip && pip3 install --upgrade wheel meson \
+	`# scrcpy` && mkdir -p /src && chmod go+w /src && cd /src && git clone https://github.com/Genymobile/scrcpy \
+	&& cd /src/scrcpy && wget https://github.com/Genymobile/scrcpy/releases/download/v1.13/scrcpy-server-v1.13 \
+	&& cd /src/scrcpy && meson x --buildtype release --strip -Db_lto=true -Dprebuilt_server=/src/scrcpy/scrcpy-server-v1.13 \
+	&& cd /src/scrcpy && ninja -Cx && sudo ninja -Cx install
+
+RUN mkdir -p /i3c/i3c && echo "#!/bin/bash" > /i3c/i3c/run-startup-after.sh \
+	&& echo "useradd -m -s /bin/bash -g root ths && echo \"ths:pass\" | /usr/sbin/chpasswd && usermod -aG sudo ths" >> /i3c/i3c/run-startup-after.sh \
+	&& echo "echo env -u SESSION_MANAGER -u DBUS_SESSION_BUS_ADDRESS cinnamon-session>~/.xsession" >> /i3c/i3c/run-startup-after.sh \
+	&& chmod a+x /i3c/i3c/run-startup-after.sh 
+
+#USER ths

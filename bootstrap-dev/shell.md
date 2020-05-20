@@ -1,8 +1,27 @@
+# Getting started - TinyHomeServer F0 thsDevMachine
+
+### docker 
+
+#### run from dockerhub
+```
+docker run -d -rm --hostname thsDevMachine --name ths --shm-size 1g -p 3389:3389 -p 2222:22 \
+	-e ROOT_PASS=masterKey virtimus/ths:devMachine
+```	
+(rdp user/pass: ths/pass)
 
 
-### scrcpy
+#### build from dockerfile	
+```
+docker build -t ths .
 
+docker run -d --rm --hostname thsDevMachine --name ths --shm-size 1g -p 3389:3389 -p 2222:22 \
+	-e ROOT_PASS=masterKey ths
+```
+
+#### Manual install of adb/scrcpy
+<!--
 #@refs:https://github.com/Genymobile/scrcpy/blob/master/BUILD.md
+-->
 
 Runtime dependencies
 ```
@@ -33,4 +52,3 @@ cd /src/scrcpy && wget https://github.com/Genymobile/scrcpy/releases/download/v1
 cd /src/scrcpy && meson x --buildtype release --strip -Db_lto=true -Dprebuilt_server=/src/scrcpy/scrcpy-server-v1.13
 cd /src/scrcpy && ninja -Cx && sudo ninja -Cx install
 ```
-#sudo apt-get install xorg-dev
