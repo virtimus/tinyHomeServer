@@ -13,6 +13,7 @@ Currently only AndroidTV/UserLAnd platform [bootstrap/androidtv-userland.md](boo
 ## in progress:
 - espcam32 connect (ESPHome)
 - smart doorbell (redir to smartphone etc)
+- apache2/webdav (Windows web folders)
 - nextcloud (access via webdav/web disk, local teleconf, document repository etc)
 - port/domain forward (access to components via name)
 - simple task automation, flow organizer, data storage
