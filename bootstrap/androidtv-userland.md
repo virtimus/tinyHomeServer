@@ -6,45 +6,9 @@ https://www.youtube.com/watch?v=SiihcFD1fGI
 
 ## Connecting device to local network
 
-First You have to connect Your device to Your local network. Use cable (preferred) or wifi settings
+First You have to connect Your device to Your local network.
 
-## Determine device IP
-
-You can:
-
-	- read it from the device (System/App info)
-	
-	- use Your router status page 
-	
-	- install nmap, check Your machine ip (ifconfig/ipconfig) and scan for connected devices (nmap -sn 192.168.[X].0/24)
-
-## Accessing Your device
-
-- make sure You enabled developer mode and switched on usb debug on Your device
-	
-- install android adb/scrcpy 
-
-- set a name "ths" for ip of Your master node device in hosts file (/etc/hosts on Linux):
-
-```
-[device IP] ths
-```
-
-- access Your device:
-
-```
-adb connect [device IP or name]
-```
-(should display something like "connected to ths:5555")
-
-```
-adb devices
-``` 
-(You should see Your device listed as "device")
-
-If something goes wrong here - try to connect your device to PC using usb cable and apply "adb devices" once again
-
-Run scrcpy - You should see Your new device screeen
+[F0 - Connecting Your device](device-connection.md)
 
 ## Installing thsMasterNode
 

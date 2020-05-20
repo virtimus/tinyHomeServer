@@ -42,7 +42,7 @@ Not necessary for end-user.
 
 Your home server main machine with central software - Android && Ubuntu/UserLAnd
 
-SmartTV with at least 2GB recommended
+Android TV box with ethernet socket, wifi & at least 2GB recommended
 
 ### thsDevice
 

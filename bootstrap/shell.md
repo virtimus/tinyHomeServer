@@ -2,6 +2,17 @@
 <!--
 #@bashMarkupScript:0.0.1
 #@depends:androidtv-userland
+
+#### made on base of /i3c/dockerfiles/inb
+#--upgrade was causing issues like https://github.com/preactjs/preact/issues/1775
+
+#@param:thsIntStoragePath:/storage/self/primary/Android/data/tech.ula/files/storage
+#@param:thsExtStoragePath:/storage/*-*/Android/data/tech.ula/files/storage
+#@param:thsRootUL:/data/data/tech.ula/files/1/
+#@param:thsRootAnd:/host-rootfs
+#@param:hostapdBin:/vendor/bin/hw/hostapd
+#@param:hostapdConf:/data/vendor/wifi/hostapd/hostapd_wlan0.conf
+
 -->
 
 ## Getting started - TinyHomeServer F2 Shell

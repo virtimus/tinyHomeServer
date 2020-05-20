@@ -6,7 +6,7 @@
 
 Runtime dependencies
 ```
-sudo apt update -y && sudo apt install -y ffmpeg libsdl2-2.0-0 adb
+sudo apt update -y && sudo apt install -y ffmpeg libsdl2-2.0-0 adb xorg-dev
 ```
 
 Client build dependencies
@@ -23,7 +23,7 @@ On old versions (like Ubuntu 16.04), meson is too old. In that case, install it 
 ```
 #sudo apt install -y python3-pip && pip3 install meson
 sudo apt install -y python3-pip python3-setuptools python3-wheel && sudo -H pip3 install --upgrade pip && pip3 install --upgrade wheel meson
-sudo ln -sf /home/mb/.local/bin/meson /usr/bin/meson
+#sudo ln -sf /home/mb/.local/bin/meson /usr/bin/meson
 ```
 
 Compile and install with prebuild scrcpy server:
@@ -33,4 +33,4 @@ cd /src/scrcpy && wget https://github.com/Genymobile/scrcpy/releases/download/v1
 cd /src/scrcpy && meson x --buildtype release --strip -Db_lto=true -Dprebuilt_server=/src/scrcpy/scrcpy-server-v1.13
 cd /src/scrcpy && ninja -Cx && sudo ninja -Cx install
 ```
-sudo apt-get install xorg-dev
+#sudo apt-get install xorg-dev
