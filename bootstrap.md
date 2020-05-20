@@ -1,6 +1,6 @@
 # Getting started
 
-## The installaction standard flow order
+## The installation standard flow order
 - [AndroidTV/UserLAnd (basic components)](https://www.youtube.com/watch?v=SiihcFD1fGI)
 - [shell (system, adb, time, ths core, adb connect, tinydb, fs links, hosts, accesspoint, basic ths folders & tools)](https://www.youtube.com/watch?v=O-TR90wMyCI)
 (optional)
