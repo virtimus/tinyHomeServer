@@ -35,7 +35,7 @@ You can:
 ```
 adb connect [device IP or name]
 ```
-(should display something like "connected to 192.168.2.112:5555")
+(should display something like "connected to ths:5555")
 
 ```
 adb devices
