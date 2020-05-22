@@ -24,7 +24,7 @@ You can:
 
 - Make sure You enabled developer mode and switched on usb debug on Your device
 	
-- Install android adb/scrcpy on Your computer (or install full [thsDevMachine](../bootstrap-dev/shell,md))
+- Install android adb/scrcpy on Your computer (or install full [thsDevMachine](../bootstrap-dev/shell.md))
 
 - Set a name "ths" for ip of Your master node device in hosts file (/etc/hosts on Linux):
 
