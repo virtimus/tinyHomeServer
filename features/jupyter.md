@@ -19,6 +19,16 @@ The authorisation token should be accessible using tjupyter-pass command:
 tjupyter-pass
 ```
 
+Allow inframe:
+
+~/.jupyter/jupyter_notebook_config.py
+
+c.NotebookApp.tornado_settings = {
+    'headers': {
+        'Content-Security-Policy': "frame-ancestors 'self' http://ths http://master.ths "
+  }
+}
+
 	
 
 

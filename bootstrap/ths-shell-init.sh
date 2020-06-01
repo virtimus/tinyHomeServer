@@ -181,12 +181,12 @@ echo "[ths-shell-init] Create bin folder ..."
 tstep=1
 mkdir -p /ths/bin
 e=$? && handleError 
-cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tsetup tsetup
+cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tfsetup tfsetup
 e=$? && handleError 
-cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tap-start tap-start
-e=$? && handleError 
-cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/thass-start thass-start
-e=$? && handleError 
+#cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tap-start tap-start
+#e=$? && handleError 
+#cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/thass-start thass-start
+#e=$? && handleError 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/thosts thosts
 e=$? && handleError 
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tauto tauto

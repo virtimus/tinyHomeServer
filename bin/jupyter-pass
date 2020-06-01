@@ -1,5 +1,0 @@
-#!/bin/bash
-
-#@desc: Jupyter password 
-token=$(cat /ths/rootUL/var/log/jupyter.log | grep -Pom1 'token=\K[^"]+')
-echo $token

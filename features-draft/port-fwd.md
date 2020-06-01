@@ -78,4 +78,6 @@ iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination 192.168
 iptables -t nat --delete  PREROUTING -p tcp --dport 80 -j DNAT --to-destination 192.168.2.134:8888
 
 iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination 192.168.2.134:8123
+
+iptables -t nat -A PREROUTING -p tcp --dport 445 -j DNAT --to-destination 192.168.2.101:2445
     

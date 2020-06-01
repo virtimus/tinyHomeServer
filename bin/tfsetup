@@ -7,27 +7,27 @@ thsHome=/ths/tinyHomeServer
 tstep=1
 
 handleError(){
-  if [ $e -ne 0 ];then echo "[ths-shell-init] step $tstep error $e" && exit; fi && ((tstep++))
+  if [ $e -ne 0 ];then echo "[ths-shell-init] step $tstep error $e" && exit($e); fi && ((tstep++))
 }
 
 handleHeader(){
-	echo "=== [tsetup] === $msg ..."
+	echo "=== [tfsetup] === $msg ..."
 	tstep=1
 }
 
 handleEnd(){
-	echo "[tsetup] END."
+	echo "[tfsetup] END."
 }
 
 
 
 case "$2" in
 
-  features/jupyter)
+  features/jupyter|jupyter)
     source $thsHome/features/jupyter/ths-setup
 		;;
 
-  features/hass)
+  features/hass|hass)
     source $thsHome/features/hass/ths-setup
 		;;
 	*)

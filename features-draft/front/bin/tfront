@@ -1,0 +1,98 @@
+#!/usr/bin/env php
+<?php
+
+function usage(){
+
+    echo "Usage:";
+    echo "tfront tabs g|[s name json]|d name";
+    exit;
+}   
+
+function getCurrentTabs(){
+    //$gOut = exec();
+    ob_start();
+    passthru('tfront tabs g');
+    $gOut = ob_get_contents();
+    ob_end_clean(); //Use this instead of ob_flush()
+    //echo "gOut $gOut";
+    $arrOut=json_decode($gOut,true);
+    return $arrOut['data']['tabs'];    
+}
+
+function removeByName($name){
+    $currentTabs = getCurrentTabs();
+    foreach($currentTabs as $key => $value){
+        if ($value['name'] == $name){
+            $id = $value['id'];
+            exec("tfront tabs d 'by:id' $id");  
+        }
+    }
+}
+    
+    
+$a_what = $argv[1];
+$a_oper = $argv[2];
+if ($a_what != "tabs") usage();
+if ($a_oper != "s" && $a_oper != "g" && $a_oper != "d") usage();
+
+$apiDir='/ths/www/html/api';
+chdir($apiDir); 
+
+if ($a_oper == "g") {
+    $_SERVER['REQUEST_METHOD']='GET';
+    $_GET['v1_tab_list']=1;
+} else if ($a_oper == "s") {
+    //print_r(getCurrentTabs());
+    //exit;
+    //$currentTabs = getCurrentTabs();
+    $arrIn=json_decode($argv[3],true);
+    $tabUrl='';
+    if (isset($arrIn['url'])){
+        $tabUrl=$arrIn['url'];
+    }
+    
+    $tabImage='';
+    if (isset($arrIn['image'])){
+        $tabImage=$arrIn['image'];
+    }  
+    $tabName='';
+    if (isset($arrIn['name'])){
+        $tabName=$arrIn['name'];
+    }    
+    
+    removeByName($tabName);
+    
+    $_GET['v1_settings_tab_editor_tabs']=1;
+    $_SERVER['REQUEST_METHOD']='POST';
+    $_POST['data']['action']='addNewTab';
+    $_POST['data']['tabOrder']=99;
+    $_POST['data']['tabName']=$tabName;
+    $_POST['data']['tabURL']=$tabUrl;
+    $_POST['data']['tabLocalURL']=$tabUrl;
+    $_POST['data']['pingURL']=$tabUrl;
+    $_POST['data']['tabDefault']=0;
+    $_POST['data']['tabGroupID']=1;
+    $_POST['data']['tabImage']=$tabImage;
+    $_POST['data']['tabType']=1;
+    $_POST['data']['tabActionType']=null;
+    $_POST['data']['tabActionTime']=null;
+    
+} else if ($a_oper == "d"){
+    
+    $id = $argv[3];
+    if ($id == 'by:id'){
+        $id =  $argv[4];
+        $_GET['v1_settings_tab_editor_tabs']=1;
+        $_SERVER['REQUEST_METHOD']='POST';
+        $_POST['data']['action']='deleteTab';
+        $_POST['data']['id']=$id;
+    } else {
+        removeByName($id);
+        exit;
+    }
+}
+
+$_GET['apikey']='ekm2caq163rghg1jnba0';
+//$_GET['pretty']=1;
+include "${apiDir}/index.php"
+?>
