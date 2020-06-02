@@ -1,4 +1,4 @@
-if false; then
+#if false; then
 msg='Install from source jupyter notebook and some additional extensions' handleHeader
 cd /ths/src && tgit cp https://github.com/virtimus/notebook && cd notebook && pip3 install -e . && npm run build
 e=$? && handleError 
@@ -21,7 +21,7 @@ msg='Generate config' handleHeader
 cd /ths && DEBIAN_FRONTEND=noninteractive  echo "n\n\n\n" | jupyter notebook --generate-config
 e=$? && handleError
 
-fi # false
+#fi # false
 
 msg='Create startup script (tjupyter-start) and password reader (tjupyter-pass)' handleHeader
 cat >/ths/bin/tjupyter-start << EOF
