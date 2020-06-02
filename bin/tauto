@@ -39,7 +39,7 @@ print("### generated from /ths/db/autostart.json (TinyDB) ###")
 print("######################################################")
 print("#/ths/bin/initap > /var/log/initap.log 2>&1")
 print("adb connect localhost")
-print("su - %s -c '%s'" % (user,"tenv && tstartup"))
+print("su - %s -c '%s'" % (user,". tenv && tstartup"))
 
 #content        
 result = db.all() #db.search(qry.intf == '*')

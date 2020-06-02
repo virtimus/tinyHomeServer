@@ -209,7 +209,7 @@ chmod ug+x /ths/bin/*
 e=$? && handleError 
 
 echo "[ths-shell-init] Setup env variables ..."
-tenv
+. tenv
 e=$? && handleError
 
 echo "[ths-shell-init] Setup standard autostart file ..."
