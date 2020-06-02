@@ -7,7 +7,7 @@ thsHome=/ths/tinyHomeServer
 tstep=1
 
 handleError(){
-  if [ $e -ne 0 ];then echo "[ths-shell-init] step $tstep error $e" && exit($e); fi && ((tstep++))
+  if [ $e -ne 0 ];then echo "[ths-shell-init] step $tstep error $e" && exit $e; fi && ((tstep++))
 }
 
 handleHeader(){
