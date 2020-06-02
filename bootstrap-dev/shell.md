@@ -4,7 +4,7 @@
 
 #### run from dockerhub
 ```
-docker run -d -rm --hostname thsDevMachine --name ths --shm-size 1g -p 3389:3389 -p 2222:22 \
+docker run -d --rm --hostname thsDevMachine --name ths --shm-size 1g -p 3389:3389 -p 2222:22 \
 	-e ROOT_PASS=masterKey virtimus/ths:devMachine
 ```	
 (rdp user/pass: ths/pass)
