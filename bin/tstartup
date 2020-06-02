@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for f in $THS_HOME/tinyHomeServer/features-active/*
+do
+	source $f
+	#echo $f
+done

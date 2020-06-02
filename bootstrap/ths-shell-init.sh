@@ -7,6 +7,9 @@ thsRootAnd=/host-rootfs
 hostapdBin=/vendor/bin/hw/hostapd
 hostapdConf=/data/vendor/wifi/hostapd/hostapd_wlan0.conf
 thsStorage='int'
+thsUser='ths'
+thsHome=/ths
+
 e=0
 tstep=1
 
@@ -177,7 +180,7 @@ tstep=1
 adb -s localhost shell su -c 'mount -o remount,ro /'
 e=$? && handleError 
 
-echo "[ths-shell-init] Create bin folder ..."
+echo "[ths-shell-init] Create /ths/bin folder ..."
 tstep=1
 mkdir -p /ths/bin
 e=$? && handleError 
@@ -194,8 +197,25 @@ e=$? && handleError
 cd /ths/bin && ln -sf /ths/tinyHomeServer/bin/tgit tgit
 e=$? && handleError 
 
+cat > /ths/bin/tenv << EOF
+#!/bin/bash
+export THS_USER=$thsUser
+export THS_HOME=$thsHome
+EOF
+e=$? && handleError
+
+echo "[ths-shell-init] Activate /ths/bin folder ..."
 chmod ug+x /ths/bin/*
 e=$? && handleError 
+
+echo "[ths-shell-init] Setup env variables ..."
+tenv
+e=$? && handleError
+
+echo "[ths-shell-init] Setup standard autostart file ..."
+tauto > /support/autostart.sh
+e=$? && handleError 
+
 
 
 echo "[ths-shell-init] END."
