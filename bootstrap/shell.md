@@ -33,7 +33,7 @@ mkdir -p /ths/src && cd /ths && if [ ! -e /ths/tinyHomeServer ]; then git clone 
 
 Run ths-shell-init script
 ```
-cd /ths/tinyHomeServer/bootstrap && ./ths-shell-init.sh
+cd /ths/tinyHomeServer/bootstrap && ./ths-shell-init.sh && . tenv
 ```
 Successful init should end with:
 
