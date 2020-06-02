@@ -35,7 +35,8 @@ EOF
 e=$? && handleError
 chmod ug+rx /ths/bin/thass-start
 e=$? && handleError
-tauto s hass '{"name":"hass", "command":"/ths/bin/thass-start"}' > /support/autostart.sh
+#tauto s hass '{"name":"hass", "command":"/ths/bin/thass-start"}' > /support/autostart.sh
+ln -sf /ths/tinyHomeServer/features/hass/ths-start /ths/.startup/hass
 e=$? && handleError
 thass-start
 e=$? && handleError

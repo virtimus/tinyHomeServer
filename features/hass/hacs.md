@@ -21,4 +21,4 @@ mkdir -p ~/.homeassistant/custom_components
 cd ~/.homeassistant/custom_components && ln -sf /ths/src/hacs-integration/custom_components/hacs hacs
 ```
 
-Przechodzimy do https://github.com/settings/tokens i generujemy Access Token (no checkboxes)
+Go to  https://github.com/settings/tokens and generate  Access Token (no checkboxes)
