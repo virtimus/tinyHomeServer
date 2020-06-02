@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for f in $THS_HOME/tinyHomeServer/features-active/*
+for f in $THS_HOME/.startup/*
 do
 	source $f
 	#echo $f

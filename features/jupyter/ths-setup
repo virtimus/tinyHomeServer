@@ -48,7 +48,7 @@ chmod ug+rx /ths/bin/tjupyter-pass
 e=$? && handleError
 
 msg='Setup jupyter autostart and run jupyter' handleHeader 
-ln -sf /ths/tinyHomeServer/features/jupyter/ths-start /ths/tinyHomeServer/features-active/jupyter
+ln -sf /ths/tinyHomeServer/features/jupyter/ths-start /ths/.startup/jupyter
 #tauto s jupyter '{"name":"jupyter", "command":"/ths/bin/tjupyter-start"}' > /support/autostart.sh
 e=$? && handleError
 tjupyter-start

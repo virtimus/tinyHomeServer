@@ -212,7 +212,8 @@ echo "[ths-shell-init] Setup env variables ..."
 . tenv
 e=$? && handleError
 
-echo "[ths-shell-init] Setup standard autostart file ..."
+echo "[ths-shell-init] Setup startup folder and standard autostart file ..."
+mkdir -p $THS_HOME/.startup
 tauto > /support/autostart.sh
 e=$? && handleError 
 
