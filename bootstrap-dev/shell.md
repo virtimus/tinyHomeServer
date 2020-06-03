@@ -1,4 +1,4 @@
-# Getting started - TinyHomeServer F0 thsDevMachine
+# Getting started - TinyHomeServer - F0 thsDevMachine
 
 You can use/build docker image or install manually - instructions bellow.
 
