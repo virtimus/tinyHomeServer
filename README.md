@@ -18,7 +18,7 @@ A functional feaure/package of ths:
 
 [F1 - UserLAnd](bootstrap/androidtv-userland.md) - Ubuntu on Android
 	
-[F2 - Shell](bootstrap/shell.md) - Shell layer- helper scripts an resources
+[F2 - Shell](bootstrap/shell.md) - Shell layer helper scripts an resources
 
 [F3 - Home Assistant](features/hass.md) - Home automation platform
 
