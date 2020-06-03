@@ -2,7 +2,7 @@
 
 (tested on AndroidTV x96max+ model)
 
-UserLAnd is an open-source Android app which allows us to run Ubuntu as a base platform for other software.
+[UserLAnd](https://userland.tech/) is an open-source Android app which allows us to run Ubuntu as a base platform for other software.
 
 User can: 
 
