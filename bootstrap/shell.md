@@ -19,6 +19,7 @@
 
 https://www.youtube.com/watch?v=O-TR90wMyCI
 
+(system, adb, time, ths core, adb connect, tinydb, fs links, hosts, accesspoint, basic ths folders & tools)
 
 Connect to Your device via ssh 
 ```
