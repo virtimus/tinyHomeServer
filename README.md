@@ -33,6 +33,8 @@ Shell layer- helper scripts an resources
 
 [F3 - Home Assistant](features/hass.md)
 
+[F4 - Jupyter Notebook](features/jupyter.md)
+
 ### thsDevMachine
 
 Development machine on which You can build/control any other system component. 
