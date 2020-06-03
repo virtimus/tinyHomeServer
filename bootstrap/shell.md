@@ -15,7 +15,7 @@
 
 -->
 
-## Getting started - TinyHomeServer F2 Shell
+## Getting started - TinyHomeServer - F2 Shell
 
 https://www.youtube.com/watch?v=O-TR90wMyCI
 
