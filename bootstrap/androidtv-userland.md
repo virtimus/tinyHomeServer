@@ -1,4 +1,4 @@
-# Getting started - TinyHomeServer F1 UserLAnd 
+# Getting started - TinyHomeServer - F1 UserLAnd 
 
 (tested on AndroidTV x96max+ model)
 
