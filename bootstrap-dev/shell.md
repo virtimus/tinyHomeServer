@@ -1,16 +1,19 @@
 # Getting started - TinyHomeServer F0 thsDevMachine
 
-### docker 
+You can use/build dockerimage or install manually - instructions bellow.
 
-#### run from dockerhub
+### Docker 
+
+#### Run from dockerhub
 ```
 docker run -d --rm --hostname thsDevMachine --name ths --shm-size 1g -p 3389:3389 -p 2222:22 \
 	-e ROOT_PASS=masterKey virtimus/ths:devMachine
 ```	
-(rdp user/pass: ths/pass)
+(rdp user/pass: ths/pass)``	
+ 
+  
 
-
-#### build from dockerfile	
+####  Build from dockerfile 	
 ```
 docker build -t ths .
 
@@ -18,7 +21,7 @@ docker run -d --rm --hostname thsDevMachine --name ths --shm-size 1g -p 3389:338
 	-e ROOT_PASS=masterKey ths
 ```
 
-#### Manual install of adb/scrcpy
+### Manual install of adb/scrcpy
 <!--
 #@refs:https://github.com/Genymobile/scrcpy/blob/master/BUILD.md
 -->
