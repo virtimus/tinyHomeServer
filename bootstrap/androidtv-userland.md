@@ -23,16 +23,17 @@ First You have to connect Your device to Your local network.
 
 Install UserLandTuned 
 
-- compiled from source:
-```
-mkdir -p /src && cd /src && git clone https://github.com/virtimus/UserLAnd && cd UserLAnd && gradlew build
-adb install /src/UserLAnd/app/build/outputs/apk/debug/app-debug.apk 
-```
-- or downloaded:
+- downloaded (recommended):
 
 ```
 cd /tmp && wget https://github.com/virtimus/tinyHomeServer/raw/master/bin/UserLAndTuned-alfa.apk
 cd /tmp && adb install UserLAndTuned-alfa.apk
+```
+
+- or compile from source (time consuming process):
+```
+mkdir -p /src && cd /src && git clone https://github.com/virtimus/UserLAnd && cd UserLAnd && gradlew build
+adb install /src/UserLAnd/app/build/outputs/apk/debug/app-debug.apk 
 ```
 
 Now using scrcpy session go to Applications/UserLand.
