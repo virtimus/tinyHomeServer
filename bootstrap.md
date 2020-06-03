@@ -9,11 +9,11 @@ Currently only AndroidTV/UserLAnd platform [bootstrap/androidtv-userland.md](boo
 - [F1 - AndroidTV/UserLAnd (basic components)](bootstrap/androidtv-userland.md)<!-- https://www.youtube.com/watch?v=SiihcFD1fGI -->
 - [F2 - Shell installation](bootstrap/shell.md)<!-- https://www.youtube.com/watch?v=O-TR90wMyCI -->
 
-Optional:
+### Optional:
 - [F3 - hass (Home Assistant)](https://www.youtube.com/watch?v=QeBshrCm0Bs)
 - jupyter(python3.7, Jupyter Notebook)
 
-## in progress:
+## In progress:
 - espcam32 connect (ESPHome)
 - smart doorbell (redir to smartphone etc)
 - apache2/webdav (Windows web folders)
