@@ -1,6 +1,6 @@
 # Getting started - TinyHomeServer F0 thsDevMachine
 
-You can use/build dockerimage or install manually - instructions bellow.
+You can use/build docker image or install manually - instructions bellow.
 
 ### Docker 
 
