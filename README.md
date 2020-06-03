@@ -12,7 +12,7 @@ Use instructions from [bootstrap.md](bootstrap.md)
 ## Tiny Home Server components
 
 
-### thsFeature
+### thsFeature 
 
 A functional feaure/package of ths:
 
