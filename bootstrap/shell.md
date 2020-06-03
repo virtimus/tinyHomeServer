@@ -41,7 +41,7 @@ Successful init should end with:
 **\[ths-shell-init\] END.**
 
 
-Configure and run AP (accessPoint) - use MacroDroid from play store for autostart of accessPoint on boot.
+Configure and run AP (accessPoint) - use WakeLock/MacroDroid/Autostart app from play store for autostart of accessPoint on boot.
 
 Use separate password for iot subnet. Referenced as thsPass
 
