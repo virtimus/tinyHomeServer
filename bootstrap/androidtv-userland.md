@@ -2,6 +2,15 @@
 
 (tested on AndroidTV x96max+ model)
 
+UserLAnd is an open-source Android app which allows us to run Ubuntu as a base platform for other software.
+
+User can: 
+
+- ssh access to tinyHomeServer
+- install Ubuntu packages
+- use commandline tools
+- use adb to control Android part
+
 https://www.youtube.com/watch?v=SiihcFD1fGI
 
 ## Connecting device to local network
