@@ -25,7 +25,7 @@ Allow inframe:
 
 c.NotebookApp.tornado_settings = {
     'headers': {
-        'Content-Security-Policy': "frame-ancestors 'self' http://ths http://master.ths "
+        'Content-Security-Policy': "frame-ancestors 'self' http://ths http://ths.lan"
   }
 }
 
