@@ -16,24 +16,13 @@ Use instructions from [bootstrap.md](bootstrap.md)
 
 A functional feaure/package of ths:
 
-[F1 - UserLAnd](bootstrap/androidtv-userland.md)
-
-UserLAnd is an open-source Android app which allows us to run Ubuntu as a base platform for other software.
-
-User can: 
-
-- ssh access to tinyHomeServer
-- install Ubuntu packages
-- use commandline tools
-- use adb to control Android part
+[F1 - UserLAnd](bootstrap/androidtv-userland.md) - Ubuntu on Android
 	
-[F2 - Shell](bootstrap/shell.md)
+[F2 - Shell](bootstrap/shell.md) - Shell layer- helper scripts an resources
 
-Shell layer- helper scripts an resources
+[F3 - Home Assistant](features/hass.md) - Home automation platform
 
-[F3 - Home Assistant](features/hass.md)
-
-[F4 - Jupyter Notebook](features/jupyter.md)
+[F4 - Jupyter Notebook](features/jupyter.md) - Organize and automate Your work
 
 ### thsDevMachine
 
