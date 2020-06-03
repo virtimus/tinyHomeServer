@@ -4,7 +4,7 @@
 #@depends:bs,python3.7(opt),cert(opt)
 #@refs:https://www.home-assistant.io/docs/installation/virtualenv/
 -->
-## Features - TinyHomeServer F3 Home Assistant
+## Features - TinyHomeServer - F3 Home Assistant
 
 https://www.youtube.com/watch?v=QeBshrCm0Bs
 
