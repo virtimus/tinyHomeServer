@@ -1,6 +1,6 @@
 # Getting started - TinyHomeServer - F1 UserLAnd 
 
-(tested on AndroidTV x96max+ model)
+(tested on AndroidTV x96 max+ model)
 
 [UserLAnd](https://userland.tech/) is an open-source Android app which allows us to run Ubuntu as a base platform for other software.
 
