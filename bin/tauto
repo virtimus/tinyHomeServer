@@ -57,7 +57,7 @@ print("su - %s -c '%s'" % (user,". /ths/bin/tenv && tstartup"))
 #content        
 result = db.all() #db.search(qry.intf == '*')
 for x in result:
-    if x.startswith('adb'):
+    if x['command'].startswith('adb'):
         print("%s # name:%s" % (user,x['command'],x['name']))
     else:
         print("su - %s -c '%s' # name:%s" % (user,x['command'],x['name']))

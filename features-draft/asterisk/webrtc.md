@@ -2,6 +2,7 @@
 #@refs:https://wiki.asterisk.org/wiki/display/AST/Configuring+Asterisk+for+WebRTC+Clients
 -->
 
+If not exists /etc/ssl/certs/ths
 Create Certificates
 ```
 mkdir -p /etc/asterisk/keys
@@ -12,7 +13,10 @@ cd /ths/src/asterisk-17.*/ && contrib/scripts/ast_tls_cert -C ths.lan -O "SPW" -
 List Certificates
 ```
 ls -l /etc/asterisk/keys
+ln -s /etc/asterisk/keys /etc/ssl/certs/ths
 ```
+
+else ln -s /etc/ssl/certs/ths /etc/asterisk/keys
 
 We'll use the asterisk.crt and asterisk.key files later to configure the HTTP server.
 

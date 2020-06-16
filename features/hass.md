@@ -3,6 +3,8 @@
 #@bashMarkupScript:0.0.1
 #@depends:bs,python3.7(opt),cert(opt)
 #@refs:https://www.home-assistant.io/docs/installation/virtualenv/
+#@	https://data.home-assistant.io/
+#@	https://github.com/home-assistant/home-assistant-notebooks
 -->
 ## Features - TinyHomeServer - F3 Home Assistant
 
