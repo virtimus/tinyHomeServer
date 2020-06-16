@@ -1,7 +1,7 @@
 #!/usr/local/bin/python
 
 import os
-user=os.getenv('THS_USER') 
+user=os.getenv('USER') 
 
 from tinydb import TinyDB, Query
 db = TinyDB('/ths/db/autostart.json')

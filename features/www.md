@@ -32,7 +32,7 @@ cd /ths/tinyHomeServer/features/www && ./ast_tls_cert -C ths.lan -O "SPW" -b 204
 Install nginx
 ```
 sudo apt update -y &&  sudo apt install -y nginx
-systemctl status nginx
+service  nginx status
 ```
 
 
@@ -40,7 +40,7 @@ systemctl status nginx
 
 Setup autostart & start nginx
 ```
-tauto s nginx {"name":"nginx", "command":"service nginx start"}
+tauto s nginx '{"name":"nginx", "command":"service nginx start"}'
 tauto > /support/autostart.sh # autostart update
 sudo service nginx start
 sudo service php7.2-fpm start 
