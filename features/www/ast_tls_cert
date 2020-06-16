@@ -1,5 +1,5 @@
 #!/bin/sh -e
-DEFAULT_ORG="THS"
+DEFAULT_ORG="THS" 
 DEFAULT_CA_CN="THS Private CA"
 DEFAULT_CLIENT_CN="ths"
 DEFAULT_SERVER_CN=`hostname -f`
