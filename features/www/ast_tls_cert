@@ -221,3 +221,5 @@ else
 		exit 1
 	fi
 fi
+
+create_cert
