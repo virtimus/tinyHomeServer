@@ -8,6 +8,6 @@ module testbench;
 		#5 A=0; B=0; C=1; D=1; E=0; F=0;
 		#5 A=1; C=0; 
 		#5 F=1;
-		#5 $finish;kihuj
+		#5 $finish;
 	end
 endmodule		
